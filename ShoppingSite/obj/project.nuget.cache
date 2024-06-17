@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uU8FPcQCzErdUndWLoBtGYvmShs98AHSoKOtyQnI0NDtF8z3IOPGB46Mke1nFhKEITiSeR4o9PR0MgcroC7RuA==",
+  "dgSpecHash": "nh+nJ6pzwe20rUF9blxRHmM6B9w8kkqxMqoFa4t2WcPn+M3+1UpOPkVccwBh6JyRqTEfre0XtZsn0dAWqJ0ifA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\shoppingSite\\ShoppingSite.csproj",
+  "projectFilePath": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\ShoppingSite.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\marui-1222\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\marui-1222\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
