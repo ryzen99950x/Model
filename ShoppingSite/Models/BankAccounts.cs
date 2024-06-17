@@ -6,8 +6,8 @@ namespace ShoppingSite.Models
     {
         public int Id { get; set; }
         public int BranchCode { get; set; }
-        public int AccountNum { get; set;}
+        public int AccountNum { get; set; }
         public int UserId { get; set; }
-        public User User { get; set; }
+        public User? User { get; set; }
     }
 }

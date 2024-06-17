@@ -8,6 +8,6 @@ namespace ShoppingSite.Models
         public int CardNum { get; set; }
         public int SecurityCode { get; set; }
         public int UserId { get; set; }
-        public User User { get; set; }
+        public User? User { get; set; }
     }
 }

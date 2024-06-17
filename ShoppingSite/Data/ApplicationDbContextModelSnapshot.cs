@@ -16,7 +16,7 @@ namespace ShoppingSite.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.5")
+                .HasAnnotation("ProductVersion", "8.0.6")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -214,7 +214,6 @@ namespace ShoppingSite.Data.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("CategoryName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -267,6 +266,8 @@ namespace ShoppingSite.Data.Migrations
 
                     b.HasIndex("OderId");
 
+                    b.HasIndex("ProductId");
+
                     b.HasIndex("UserId");
 
                     b.ToTable("Favorites");
@@ -281,7 +282,6 @@ namespace ShoppingSite.Data.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("GenderName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -305,6 +305,8 @@ namespace ShoppingSite.Data.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CartId");
+
                     b.HasIndex("UserId");
 
                     b.ToTable("Orders");
@@ -319,7 +321,6 @@ namespace ShoppingSite.Data.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("PackageType")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -346,6 +347,10 @@ namespace ShoppingSite.Data.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("BankAccountId");
+
+                    b.HasIndex("CreditId");
+
                     b.HasIndex("UserId");
 
                     b.ToTable("Payments");
@@ -363,29 +368,24 @@ namespace ShoppingSite.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("GenderId")
                         .HasColumnType("int");
 
                     b.Property<string>("Image")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Limited")
                         .HasColumnType("int");
 
                     b.Property<string>("Material")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Package")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Price")
@@ -412,6 +412,9 @@ namespace ShoppingSite.Data.Migrations
 
                     b.HasIndex("GenderId");
 
+                    b.HasIndex("ReviewId")
+                        .IsUnique();
+
                     b.ToTable("Product");
                 });
 
@@ -424,7 +427,6 @@ namespace ShoppingSite.Data.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Comment")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("PruductId")
@@ -455,7 +457,6 @@ namespace ShoppingSite.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Address")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ConcurrencyStamp")
@@ -615,6 +616,12 @@ namespace ShoppingSite.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("ShoppingSite.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("ShoppingSite.Models.User", "User")
                         .WithMany("Favorites")
                         .HasForeignKey("UserId")
@@ -623,27 +630,53 @@ namespace ShoppingSite.Data.Migrations
 
                     b.Navigation("Oder");
 
+                    b.Navigation("Product");
+
                     b.Navigation("User");
                 });
 
             modelBuilder.Entity("ShoppingSite.Models.Orders", b =>
                 {
+                    b.HasOne("ShoppingSite.Models.Carts", "Cart")
+                        .WithMany()
+                        .HasForeignKey("CartId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("ShoppingSite.Models.User", "User")
                         .WithMany("Orders")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.Navigation("Cart");
+
                     b.Navigation("User");
                 });
 
             modelBuilder.Entity("ShoppingSite.Models.Payments", b =>
                 {
+                    b.HasOne("ShoppingSite.Models.BankAccounts", "BankAccount")
+                        .WithMany()
+                        .HasForeignKey("BankAccountId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ShoppingSite.Models.Credits", "Credit")
+                        .WithMany()
+                        .HasForeignKey("CreditId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("ShoppingSite.Models.User", null)
                         .WithMany("Payments")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("BankAccount");
+
+                    b.Navigation("Credit");
                 });
 
             modelBuilder.Entity("ShoppingSite.Models.Product", b =>
@@ -660,9 +693,17 @@ namespace ShoppingSite.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("ShoppingSite.Models.Reviews", "Review")
+                        .WithOne("Product")
+                        .HasForeignKey("ShoppingSite.Models.Product", "ReviewId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Category");
 
                     b.Navigation("Gender");
+
+                    b.Navigation("Review");
                 });
 
             modelBuilder.Entity("ShoppingSite.Models.Reviews", b =>
@@ -674,6 +715,11 @@ namespace ShoppingSite.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("ShoppingSite.Models.Reviews", b =>
+                {
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("ShoppingSite.Models.User", b =>

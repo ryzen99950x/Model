@@ -4,7 +4,9 @@
     {
         public int Id { get; set; }
         public int BankAccountId { get; set; }
-        public int CreditId {  get; set; }
+        public int CreditId { get; set; }
         public int UserId { get; set; }
+        public BankAccounts? BankAccount { get; set; }
+        public Credits? Credit { get; set; }
     }
 }
