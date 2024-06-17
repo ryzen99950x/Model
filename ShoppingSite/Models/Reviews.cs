@@ -7,5 +7,6 @@
         public int Rating { get; set; }
         public int PruductId { get; set; }
         public int UserId { get; set; }
+        public User User { get; set; }
     }
 }

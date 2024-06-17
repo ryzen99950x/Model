@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\ShoppingSite.csproj": {}
+    "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\shoppingSite\\ShoppingSite.csproj": {}
   },
   "projects": {
-    "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\ShoppingSite.csproj": {
+    "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\shoppingSite\\ShoppingSite.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\ShoppingSite.csproj",
+        "projectUniqueName": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\shoppingSite\\ShoppingSite.csproj",
         "projectName": "ShoppingSite",
-        "projectPath": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\ShoppingSite.csproj",
+        "projectPath": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\shoppingSite\\ShoppingSite.csproj",
         "packagesPath": "C:\\Users\\marui-1222\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\obj\\",
+        "outputPath": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\shoppingSite\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\marui-1222\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -64,6 +64,10 @@
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
               "version": "[8.0.5, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[8.0.2, )"
             }
           },
           "imports": [

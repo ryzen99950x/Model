@@ -2,7 +2,7 @@
 
 namespace ShoppingSite.Models
 {
-    public class Admin : IdentityUser<int>
+    public class Admin/* : IdentityUser<int>*/
     {
     }
 }

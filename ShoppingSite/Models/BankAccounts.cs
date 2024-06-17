@@ -1,4 +1,6 @@
-﻿namespace ShoppingSite.Models
+﻿using ShoppingSite.Models;
+
+namespace ShoppingSite.Models
 {
     public class BankAccounts
     {
@@ -6,5 +8,6 @@
         public int BranchCode { get; set; }
         public int AccountNum { get; set;}
         public int UserId { get; set; }
+        public User User { get; set; }
     }
 }
