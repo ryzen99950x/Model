@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using ShoppingSite.Models;
 using System.Diagnostics;
+using ShoppingSite.Models;
+
 
 namespace ShoppingSite.Controllers
 {

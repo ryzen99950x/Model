@@ -7,12 +7,40 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ShoppingSite.styles.css" asp-append-version="true" />
+    <style>
+        .navbar-brand {
+            position: relative;
+            transition: all 1s ease-in-out;
+        }
+            .navbar-brand.small {
+                transform: scale(0.5);
+                left: 0px;
+                top: 0px;
+            }
+
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .container-fluid.small {
+            max-height: 200px;
+        }
+
+        .navbar-brand:hover img {
+            opacity: 0.8;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <header class="header">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow ">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ShoppingSite</a>
+                <a class="navbar-brand" href="~/home">
+                    <img class="img-fluid img-50" src="~/img/logo2.svg" alt="Logo">
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -31,6 +59,20 @@
             </div>
         </nav>
     </header>
+    <script>
+        window.onscroll = function () {
+            const navbarBrand = document.querySelector('.navbar-brand');
+            const header = document.querySelector('.container-fluid');
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                navbarBrand.classList.add('small');
+                header.classList.add('small');
+            } else {
+                navbarBrand.classList.remove('small');
+                header.classList.remove('small');
+            }
+        };
+
+    </script>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

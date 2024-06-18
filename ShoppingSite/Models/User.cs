@@ -10,10 +10,9 @@ namespace ShoppingSite.Models
 
         // Navigation properties for related entities
         public List<Reviews>? Reviews { get; set; }
-        public List<Payments>? Payments { get; set; }
-        public List<Favorites>? Favorites { get; set; }
-        public List<Orders>? Orders { get; set; }
         public List<BankAccounts>? BankAccounts { get; set; }
         public List<Credits>? Credits { get; set; }
+        public ICollection<Carts> Carts { get; set; }
+        public ICollection<Favorites> Favorites { get; set; }
     }
 }

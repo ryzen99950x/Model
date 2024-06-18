@@ -26,132 +26,16 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\marui-1222\source\C#_DB\ShoppingSite\ShoppingSite\ShoppingSite
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Areas/Identity/Pages/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Areas/Identity/Pages/Account/ViewImport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxWaWV3SW1wb3J0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/BankAccounts/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFua0FjY291bnRzXENyZWF0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/BankAccounts/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFua0FjY291bnRzXERlbGV0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/BankAccounts/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFua0FjY291bnRzXERldGFpbHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/BankAccounts/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFua0FjY291bnRzXEVkaXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/BankAccounts/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFua0FjY291bnRzXEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Carts/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Carts/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Carts/Details - コピー.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcRGV0YWlscyAtIOOCs+ODlOODvC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Carts/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcRGV0YWlscy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Carts/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcRWRpdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Carts/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Categories/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xDcmVhdGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Categories/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xEZWxldGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Categories/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xEZXRhaWxzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Categories/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xFZGl0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Categories/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Credits/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3JlZGl0c1xDcmVhdGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Credits/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3JlZGl0c1xEZWxldGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Credits/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3JlZGl0c1xEZXRhaWxzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Credits/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3JlZGl0c1xFZGl0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Credits/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3JlZGl0c1xJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Favorites/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmF2b3JpdGVzXENyZWF0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Favorites/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmF2b3JpdGVzXERlbGV0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Favorites/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmF2b3JpdGVzXERldGFpbHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Favorites/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmF2b3JpdGVzXEVkaXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Favorites/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmF2b3JpdGVzXEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Genders/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZGVyc1xDcmVhdGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Genders/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZGVyc1xEZWxldGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Genders/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZGVyc1xEZXRhaWxzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Genders/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZGVyc1xFZGl0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Genders/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZGVyc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Home/Index.cshtml]
@@ -160,106 +44,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Orders/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJzXENyZWF0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Orders/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJzXERlbGV0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Orders/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJzXERldGFpbHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Orders/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJzXEVkaXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Orders/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJzXEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Packages/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFja2FnZXNcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Packages/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFja2FnZXNcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Packages/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFja2FnZXNcRGV0YWlscy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Packages/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFja2FnZXNcRWRpdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Packages/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFja2FnZXNcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Payments/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudHNcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Payments/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudHNcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Payments/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudHNcRGV0YWlscy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Payments/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudHNcRWRpdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Payments/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5bWVudHNcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Products/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Products/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Products/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGV0YWlscy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Products/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRWRpdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Products/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Reviews/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3c1xDcmVhdGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Reviews/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3c1xEZWxldGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Reviews/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3c1xEZXRhaWxzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Reviews/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3c1xFZGl0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Reviews/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3c1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Shared/Error.cshtml]
@@ -272,26 +56,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Users/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Users/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Users/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRGV0YWlscy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Users/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRWRpdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Users/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/_ViewImports.cshtml]

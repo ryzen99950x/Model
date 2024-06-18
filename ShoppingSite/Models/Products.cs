@@ -1,6 +1,6 @@
 ﻿namespace ShoppingSite.Models
 {
-    public class Product
+    public class Products
     {
         public int Id { get; set; }
         public string? Description { get; set; } // 商品説明
