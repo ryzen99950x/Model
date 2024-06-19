@@ -10,32 +10,43 @@
     <style>
         .navbar-brand {
             position: relative;
-            transition: all 1s ease-in-out;
+            transition: all 2s ease-in-out; 
         }
+
             .navbar-brand.small {
                 transform: scale(0.5);
-                left: 0px;
-                top: 0px;
             }
 
         .header {
             position: fixed;
             top: 0;
             width: 100%;
-            z-index: 100;
+            z-index: 1;
         }
 
         .container-fluid.small {
             max-height: 200px;
         }
+        }
 
         .navbar-brand:hover img {
             opacity: 0.8;
         }
+        /* h1 タグのアニメーション */
+        h1 {
+            transition: all 2s ease-in-out; 
+        }
+
+            h1.small {
+                transform: scale(8);
+                font-size: 5px;
+            }
     </style>
+
 </head>
 <body>
     <header class="header">
+        
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow ">
             <div class="container-fluid">
                 <a class="navbar-brand" href="~/home">
@@ -45,17 +56,19 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                    <partial name="_LoginPartial" />
+                <!-- h1 タグを追加 -->
+                <div class="container-fluids">
+                    <h1>Gallantiglow</h1>
                 </div>
+                <div class="d-flex justify-content-end">
+                    <div class="p-2">
+                        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                            <!-- ログインパーシャルビューを追加 -->
+                            <partial name="_LoginPartial" />
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </nav>
     </header>
@@ -63,16 +76,24 @@
         window.onscroll = function () {
             const navbarBrand = document.querySelector('.navbar-brand');
             const header = document.querySelector('.container-fluid');
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            const h1 = document.querySelector('h1');
+
+            // Calculate scroll position
+            const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+            // Add or remove 'small' class based on scroll position
+            if (scrollPosition > 100) {
                 navbarBrand.classList.add('small');
                 header.classList.add('small');
+                h1.classList.add('small');
             } else {
                 navbarBrand.classList.remove('small');
                 header.classList.remove('small');
+                h1.classList.remove('small');
             }
         };
-
     </script>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

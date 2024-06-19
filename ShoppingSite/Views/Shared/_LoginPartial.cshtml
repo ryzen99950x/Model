@@ -1,26 +1,58 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @inject SignInManager<User> SignInManager
 @inject UserManager<User> UserManager
+<style>
+    .accounting:hover{
+        opacity: 0.7;
+        animation: rotate 0.5s linear infinite;
+    }
 
+    @@keyframes rotate {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+</style>
 <ul class="navbar-nav">
 @if (SignInManager.IsSignedIn(User))
 {
-    <li class="nav-item">
-        <a  class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!</a>
-    </li>
+        <li class="nav-item d-flex align-items-center flex-column">
+            <form class="form-inline flex-grow-1" asp-area="Identity" asp-page="/View/Home/index">
+                <button type="submit" class="nav-link btn btn-link text-dark">@User.Identity?.Name 様</button>
+            </form>
+            <div class="ml-auto">
+                <a class="nav-link accounting" asp-area="Identity" asp-page="/View/Home/index">
+                    <img class="img-fluid img-100 img" src="~/img/account.svg" alt="Account">
+                </a>
+            </div>
+            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage"></a>
+        </li>
     <li class="nav-item">
         <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
             <button  type="submit" class="nav-link btn btn-link text-dark">Logout</button>
         </form>
+            <a class="nav-link accounting" asp-area="Identity" asp-page="/Account/Logout">
+                <img class="img-fluid img-100" src="~/img/logout.svg" alt="lgout">
+            </a>
     </li>
 }
 else
 {
     <li class="nav-item">
         <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
+            <a class="nav-link" asp-area="Identity" asp-page="/Account/Register">
+                <img class="img-fluid img-100" src="~/img/register.svg" alt="register">
+            </a>
     </li>
     <li class="nav-item">
         <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
+            <a class="nav-link" asp-area="Identity" asp-page="/Account/Login">
+                <img class="img-fluid img-100" src="~/img/login.svg" alt="login">
+            </a>
     </li>
 }
 </ul>

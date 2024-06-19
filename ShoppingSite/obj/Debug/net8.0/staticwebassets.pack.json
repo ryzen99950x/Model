@@ -13,6 +13,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\wwwroot\\img\\account.svg",
+      "PackagePath": "staticwebassets\\img\\account.svg"
+    },
+    {
+      "Id": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\wwwroot\\img\\home.svg",
+      "PackagePath": "staticwebassets\\img\\home.svg"
+    },
+    {
       "Id": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\wwwroot\\img\\image-thumbnail.png",
       "PackagePath": "staticwebassets\\img\\image-thumbnail.png"
     },
@@ -69,12 +77,24 @@
       "PackagePath": "staticwebassets\\img\\item-9.png"
     },
     {
+      "Id": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\wwwroot\\img\\login.svg",
+      "PackagePath": "staticwebassets\\img\\login.svg"
+    },
+    {
       "Id": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\wwwroot\\img\\logo.svg",
       "PackagePath": "staticwebassets\\img\\logo.svg"
     },
     {
       "Id": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\wwwroot\\img\\logo2.svg",
       "PackagePath": "staticwebassets\\img\\logo2.svg"
+    },
+    {
+      "Id": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\wwwroot\\img\\logout.svg",
+      "PackagePath": "staticwebassets\\img\\logout.svg"
+    },
+    {
+      "Id": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\wwwroot\\img\\register.svg",
+      "PackagePath": "staticwebassets\\img\\register.svg"
     },
     {
       "Id": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\wwwroot\\img\\select-arrow.png",

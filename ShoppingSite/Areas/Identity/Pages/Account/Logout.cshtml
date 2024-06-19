@@ -1,0 +1,29 @@
+﻿@page
+@model LogoutModel
+@{
+    ViewData["Title"] = "ログアウト確認";
+}
+<style>
+    body {
+        margin-top: 400px;
+    }
+</style>
+<body>
+    <h1>ログアウトしますか？</h1>
+    @{
+        if (User.Identity?.IsAuthenticated ?? false)
+        {
+            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
+                <button type="submit" class="nav-link btn btn-link text-dark">クリックしてログアウト</button>
+                <button type="submit" class="nav-link btn btn-link text-dark">
+                    <img class="img-fluid img-100" src="~/img/logout.svg" alt="lgout">
+                </button>
+            </form>
+
+        }
+        else
+        {
+            <p>You have successfully logged out of the application.</p>
+        }
+    }
+</body>
