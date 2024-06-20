@@ -1,0 +1,68 @@
+﻿@model IEnumerable<ShoppingSite.ViewModels.ProductSearchViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+    body {
+        margin-top: 400px;
+        background-image: url('/img/background.jpg');
+        background-color: rgba(255, 255, 255, 0.9);
+        background-blend-mode: lighten;
+        background-position: center;
+        background-repeat: repeat;
+    }
+
+    .product-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 5px;
+    }
+
+    .product-list {
+        width: 550px;
+        margin: 10px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+        text-align: center;
+        padding: 10px;
+    }
+
+        .product-list img {
+            max-width: 500px;
+            max-height: 500px;
+            margin-bottom: 10px;
+        }
+</style>
+
+<h1>Product List</h1>
+
+<div class="product-container">
+    @if (Model != null && Model.Any())
+    {
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4  m-4">
+                <div class="product-list ">
+                    <a class="nav-link text-dark" asp-action="Details" asp-route-id="@item.Id">
+                    <img src="~/@item.Image" alt="Product Image" class="img-fluid rounded" />
+
+                            <h3>@item.Name</h3>
+                            <p>Price: ￥@item.Price</p>
+                            <p>Category: @item.Category.CategoryName</p>
+                    
+                    </a> 
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <div class="col">
+            <p class="text-center">条件にマッチする結果は得られませんでした．もう一度検索してください。</p>
+        </div>
+    }
+</div>

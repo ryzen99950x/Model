@@ -1,22 +1,57 @@
-using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
-using ShoppingSite.Models;
+// ProductsController.cs
 
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using ShoppingSite.Data;
+using ShoppingSite.Models;
+using ShoppingSite.ViewModels;
+using System.Diagnostics;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace ShoppingSite.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ApplicationDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ApplicationDbContext context)
         {
-            _logger = logger;
+            _context = context;
         }
 
-        public IActionResult Index()
+        // GET: Products
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var products = await _context.Products.ToListAsync();
+            var viewModel = new ProductSearchViewModel
+            {
+                Results = products
+            };
+            foreach (var product in viewModel.Results)
+            {
+                product.Category = await _context.Categories.FindAsync(product.CategoryId);
+            }
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Index(ProductSearchViewModel searchModel)
+        {
+            IQueryable<Products> products = _context.Products;
+            TempData["SearchModel"] = searchModel.Name;
+            if (!string.IsNullOrEmpty(searchModel.Name))
+            {
+                products = products.Where(p => p.Name.Contains(searchModel.Name));
+            }
+
+            searchModel.Results = await products.ToListAsync();
+
+            foreach (var product in searchModel.Results)
+            {
+                product.Category = await _context.Categories.FindAsync(product.CategoryId);
+            }
+            return RedirectToAction("Index", "Products");
         }
 
         public IActionResult Privacy()

@@ -1,15 +1,143 @@
-﻿@{
+﻿@model ShoppingSite.ViewModels.ProductSearchViewModel
+@{
     ViewData["Title"] = "Home Page";
 }
 <style>
     body {
-        margin-top: 400px; /* 例として指定されたマージン */
-        background-image: url('path/to/your/image.jpg');
-        background-position: center; 
-        background-repeat: no-repeat;
+        margin-top: 400px; 
+        background-image: url('/img/background.jpg');
+        background-color: rgba(255, 255, 255, 0.9);
+        background-blend-mode: lighten;
+        background-position: center;
+        background-repeat: repeat;
     }
 
+    .gender-img:hover {
+        opacity: 0.9;
+    }
+
+    .gender {
+        position: relative;
+        margin-bottom: 20px; /* 要素間の余白を調整 */
+    }
+
+        .gender .image-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .gender .text-overlay {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            font-size: 24px;
+            color: white;
+        }
+
+    .mens-p {
+        position: absolute;
+        top: 80%;
+        left: 25%;
+        font-size: 40px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .womens-p {
+        position: absolute;
+        top: 80%;
+        left: 65%;
+        font-size: 40px;
+        padding: 0;
+        margin: 0;
+    }
 </style>
 <body>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <div class="container mt-3">
+        <h2 class="text-center">商品検索</h2>
+        <form method="post">
+            <div class="form-group">
+                <input type="text" class="form-control" id="Name" name="Name" value="@Model.Name" placeholder="名前" />
+            </div>
+            <div class="mt-2 text-center mb-5">
+                <button type="submit" class="btn btn-primary">検索</button>
+                <button type="button" class="btn btn-secondary" onclick="clearSearch()">リセット</button>
+                <script>
+                    function clearSearch() {
+                        document.getElementById("Name").value = "";
+                    }
+                </script>
+            </div>
+        </form>
+        <ul class="nav">
+            <li class="mb-5 nav-item d-flex align-items-center justify-content-between gender">
+                <div class="d-flex align-items-center">
+                    <div class="mr-3">
+                        <a class="nav-link" asp-area="Identity" asp-page="/View/Home/index">
+                            <div class="image-container">
+                                <img class="img-fluid gender-img" src="~/img/mens.jpg" alt="men">
+                                <div class="text-overlay mens-p">Mens</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center">
+                    <div class="ml-3">
+                        <a class="nav-link" asp-area="Identity" asp-page="/View/Home/index">
+                            <div class="image-container">
+                                <img class="img-fluid gender-img" src="~/img/women.jpg" alt="women">
+                                <div class="text-overlay womens-p">Women's</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item d-flex align-items-center justify-content-between gender">
+                <div class="d-flex align-items-center">
+                    <div class="mr-3">
+                        <a class="nav-link" asp-area="Identity" asp-page="/View/Home/index">
+                            <div class="image-container">
+                                <img class="img-fluid gender-img" src="~/img/bag.jpg" alt="Bag">
+                                <div class="text-overlay mens-p">Bag</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center">
+                    <div class="ml-3">
+                        <a class="nav-link" asp-area="Identity" asp-page="/View/Home/index">
+                            <div class="image-container">
+                                <img class="img-fluid gender-img" src="~/img/wallet.jpg" alt="wallet">
+                                <div class="text-overlay womens-p">Wallet</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item d-flex align-items-center justify-content-between gender">
+                <div class="d-flex align-items-center">
+                    <div class="ml-3">
+                        <a class="nav-link" asp-area="Identity" asp-page="/View/Home/index">
+                            <div class="image-container">
+                                <img class="img-fluid gender-img" src="~/img/jewelry.jpg" alt="jewelry">
+                                <div class="text-overlay womens-p">jewelry</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item d-flex align-items-center justify-content-between gender">
+                <div class="d-flex align-items-center">
+                    <div class="ml-3">
+                        <a class="nav-link" asp-area="Identity" asp-page="/View/Home/index">
+                            <div class="image-container">
+                                <img class="img-fluid gender-img" src="~/img/perfume.jpg" alt="perfume">
+                                <div class="text-overlay womens-p">perfume</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
 </body>

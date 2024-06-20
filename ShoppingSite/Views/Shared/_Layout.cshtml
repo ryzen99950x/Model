@@ -10,13 +10,11 @@
     <style>
         .navbar-brand {
             position: relative;
-            transition: all 2s ease-in-out; 
+            transition: all 2s ease-in-out;
         }
-
             .navbar-brand.small {
                 transform: scale(0.5);
             }
-
         .header {
             position: fixed;
             top: 0;
@@ -27,6 +25,7 @@
         .container-fluid.small {
             max-height: 200px;
         }
+
         }
 
         .navbar-brand:hover img {
@@ -34,10 +33,9 @@
         }
         /* h1 タグのアニメーション */
         h1 {
-            transition: all 2s ease-in-out; 
+            transition: all 2s ease-in-out;
         }
-
-            h1.small {
+        h1.small {
                 transform: scale(8);
                 font-size: 5px;
             }
@@ -46,7 +44,7 @@
 </head>
 <body>
     <header class="header">
-        
+
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow ">
             <div class="container-fluid">
                 <a class="navbar-brand" href="~/home">
@@ -56,19 +54,17 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <!-- h1 タグを追加 -->
                 <div class="container-fluids">
                     <h1>Gallantiglow</h1>
                 </div>
                 <div class="d-flex justify-content-end">
                     <div class="p-2">
                         <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                            <!-- ログインパーシャルビューを追加 -->
                             <partial name="_LoginPartial" />
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </nav>
     </header>
@@ -77,11 +73,8 @@
             const navbarBrand = document.querySelector('.navbar-brand');
             const header = document.querySelector('.container-fluid');
             const h1 = document.querySelector('h1');
-
-            // Calculate scroll position
             const scrollPosition = window.scrollY || document.documentElement.scrollTop;
 
-            // Add or remove 'small' class based on scroll position
             if (scrollPosition > 100) {
                 navbarBrand.classList.add('small');
                 header.classList.add('small');
