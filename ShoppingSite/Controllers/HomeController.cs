@@ -2,6 +2,7 @@
 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using ShoppingSite.Data;
 using ShoppingSite.Models;
 using ShoppingSite.ViewModels;
@@ -39,6 +40,19 @@ namespace ShoppingSite.Controllers
         public async Task<IActionResult> Index(ProductSearchViewModel searchModel)
         {
             IQueryable<Products> products = _context.Products;
+            var num = searchModel.GenderId;
+            if (num!= 0) {
+                TempData["SearchModel"] = searchModel.GenderId + 1000000000;
+                    products = products.Where(p => p.GenderId == searchModel.GenderId || p.GenderId == 3);
+
+                searchModel.Results = await products.ToListAsync();
+
+                foreach (var product in searchModel.Results)
+                {
+                    product.Category = await _context.Categories.FindAsync(product.CategoryId);
+                }
+                return RedirectToAction("Index", "Products");
+            }
             TempData["SearchModel"] = searchModel.Name;
             if (!string.IsNullOrEmpty(searchModel.Name))
             {

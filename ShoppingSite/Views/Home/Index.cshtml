@@ -51,6 +51,12 @@
         padding: 0;
         margin: 0;
     }
+
+    .custom-button {
+        border: none;
+        padding: 0;
+        background: none;
+    }
 </style>
 <body>
     <div class="container mt-3">
@@ -71,16 +77,18 @@
         </form>
         <ul class="nav">
             <li class="mb-5 nav-item d-flex align-items-center justify-content-between gender">
-                <div class="d-flex align-items-center">
-                    <div class="mr-3">
-                        <a class="nav-link" asp-area="Identity" asp-page="/View/Home/index">
-                            <div class="image-container">
-                                <img class="img-fluid gender-img" src="~/img/mens.jpg" alt="men">
-                                <div class="text-overlay mens-p">Mens</div>
+                <form method="post">
+                    <button type="submit" id ="GenderId" name="genderId" value="1" class="custom-button">
+                        <div class="d-flex align-items-center">
+                            <div class="mr-3">
+                                <div class="image-container">
+                                    <img class="img-fluid gender-img" src="~/img/mens.jpg" alt="men">
+                                    <div class="text-overlay mens-p">Mens</div>
+                                </div>
                             </div>
-                        </a>
-                    </div>
-                </div>
+                        </div>
+                    </button>
+                </form>
                 <div class="d-flex align-items-center">
                     <div class="ml-3">
                         <a class="nav-link" asp-area="Identity" asp-page="/View/Home/index">

@@ -23,12 +23,21 @@ namespace ShoppingSite.Controllers
         // GET: Products
         public async Task<IActionResult> Index(ProductSearchViewModel searchModel)
         {
-            IQueryable<Products> products = _context.Products.Include(p => p.Category); // Include を使用して関連するカテゴリも読み込む
-            var resultName = TempData["SearchModel"] as string;
-            if (!string.IsNullOrEmpty(resultName))
+            IQueryable<Products> products = _context.Products.Include(p => p.Category);
+
+            if (TempData["SearchModel"] is int resultNum)
+            {
+                if (resultNum == 1000000001 || resultNum == 1000000002 || resultNum == 1000000003)
+                {
+                    resultNum -= 1000000000; // Adjusting the resultNum as per your logic
+                    products = products.Where(p => p.GenderId == resultNum || p.GenderId == 3);
+                }
+            }
+            else if (TempData["SearchModel"] is string resultName && !string.IsNullOrEmpty(resultName))
             {
                 products = products.Where(p => p.Name.Contains(resultName));
             }
+
             var searchResults = await products.ToListAsync();
 
             foreach (var product in searchResults)
@@ -38,6 +47,7 @@ namespace ShoppingSite.Controllers
                     product.Category = await _context.Categories.FindAsync(product.CategoryId);
                 }
             }
+
             var viewModelList = searchResults.Select(p => new ProductSearchViewModel
             {
                 Id = p.Id,
@@ -50,6 +60,7 @@ namespace ShoppingSite.Controllers
 
             return View(viewModelList);
         }
+
         // GET: Products/Details/5
         public async Task<IActionResult> Details(int? id)
         {

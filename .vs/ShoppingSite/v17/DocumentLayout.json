@@ -11,7 +11,7 @@
       "RelativeMoniker": "D:0:0:{BEABF497-B132-4D9E-AF9A-621FF8921FBE}|ShoppingSite\\ShoppingSite.csproj|solutionrelative:shoppingsite\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BEABF497-B132-4D9E-AF9A-621FF8921FBE}|ShoppingSite\\ShoppingSite.csproj|c:\\users\\marui-1222\\source\\c#_db\\shoppingsite\\shoppingsite\\shoppingsite\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BEABF497-B132-4D9E-AF9A-621FF8921FBE}|ShoppingSite\\ShoppingSite.csproj|C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\shoppingsite\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BEABF497-B132-4D9E-AF9A-621FF8921FBE}|ShoppingSite\\ShoppingSite.csproj|solutionrelative:shoppingsite\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -219,7 +219,7 @@
               "RelativeDocumentMoniker": "ShoppingSite\\Views\\Products\\Details.cshtml",
               "ToolTip": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\Views\\Products\\Details.cshtml",
               "RelativeToolTip": "ShoppingSite\\Views\\Products\\Details.cshtml",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAADAAAAANAAAA",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAADMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-06-20T08:31:05.691Z",
               "EditorCaption": ""
@@ -234,8 +234,7 @@
               "RelativeToolTip": "ShoppingSite\\Controllers\\ProductsController.cs",
               "ViewState": "AQIAAA4AAAAAAAAAAAAswBcAAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T06:13:45.623Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-20T06:13:45.623Z"
             },
             {
               "$type": "Document",
@@ -247,8 +246,7 @@
               "RelativeToolTip": "ShoppingSite\\Views\\Products\\Index.cshtml",
               "ViewState": "AQIAACQAAAAAAAAAAAAAADIAAABdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-20T03:43:01.651Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-20T03:43:01.651Z"
             },
             {
               "$type": "Document",
@@ -257,8 +255,7 @@
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_ShoppingSiteDB/True/SqlTable/dbo.Products.sql",
               "ToolTip": "dbo.Products [\u30C7\u30FC\u30BF]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-06-20T01:35:38.312Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-20T01:35:38.312Z"
             },
             {
               "$type": "Document",
@@ -270,8 +267,7 @@
               "RelativeToolTip": "ShoppingSite\\Views\\Home\\Index.cshtml",
               "ViewState": "AQIAABkAAAAAAAAAAAAgwDUAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-18T03:43:57.788Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-18T03:43:57.788Z"
             },
             {
               "$type": "Document",
@@ -283,8 +279,7 @@
               "RelativeToolTip": "ShoppingSite\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AQIAAEAAAAAAAAAAAAAAACcAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-19T01:13:28.705Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-19T01:13:28.705Z"
             },
             {
               "$type": "Document",
@@ -296,8 +291,7 @@
               "RelativeToolTip": "ShoppingSite\\Views\\Shared\\_LoginPartial.cshtml",
               "ViewState": "AQIAAA8AAAAAAAAAAAAAABkAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-18T04:05:03.063Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-18T04:05:03.063Z"
             },
             {
               "$type": "Document",
@@ -309,8 +303,7 @@
               "RelativeToolTip": "ShoppingSite\\Views\\_ViewStart.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-18T03:45:15.879Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-18T03:45:15.879Z"
             },
             {
               "$type": "Document",
@@ -322,8 +315,7 @@
               "RelativeToolTip": "ShoppingSite\\ViewModels\\ProductSearchViewModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T01:23:02.887Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-20T01:23:02.887Z"
             },
             {
               "$type": "Document",
@@ -335,8 +327,7 @@
               "RelativeToolTip": "ShoppingSite\\Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-17T02:02:06.539Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-17T02:02:06.539Z"
             },
             {
               "$type": "Document",
@@ -348,8 +339,7 @@
               "RelativeToolTip": "ShoppingSite\\Controllers\\HomeController.cs",
               "ViewState": "AQIAABkAAAAAAAAAAAAIwCgAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T03:45:28.942Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-18T03:45:28.942Z"
             },
             {
               "$type": "Document",
@@ -361,8 +351,7 @@
               "RelativeToolTip": "ShoppingSite\\Data\\ApplicationDbContext.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-17T02:02:57.241Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-17T02:02:57.241Z"
             },
             {
               "$type": "Document",
@@ -371,8 +360,7 @@
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_ShoppingSiteDB/True/SqlTable/dbo.Categories.sql",
               "ToolTip": "dbo.Categories [\u30C7\u30FC\u30BF]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-06-20T03:51:00.433Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-20T03:51:00.433Z"
             },
             {
               "$type": "Document",
@@ -417,8 +405,7 @@
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_ShoppingSiteDB/True/SqlTable/dbo.Reviews.sql",
               "ToolTip": "dbo.Reviews [\u30C7\u30FC\u30BF]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-06-20T01:38:01.951Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-20T01:38:01.951Z"
             },
             {
               "$type": "Document",
