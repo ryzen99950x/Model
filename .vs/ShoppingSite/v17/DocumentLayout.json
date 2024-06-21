@@ -3,11 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_ShoppingSiteDB/True/SqlTable/dbo.Products.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BEABF497-B132-4D9E-AF9A-621FF8921FBE}|ShoppingSite\\ShoppingSite.csproj|c:\\users\\marui-1222\\source\\c#_db\\shoppingsite\\shoppingsite\\shoppingsite\\views\\shared\\_layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{BEABF497-B132-4D9E-AF9A-621FF8921FBE}|ShoppingSite\\ShoppingSite.csproj|solutionrelative:shoppingsite\\views\\shared\\_layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BEABF497-B132-4D9E-AF9A-621FF8921FBE}|ShoppingSite\\ShoppingSite.csproj|c:\\users\\marui-1222\\source\\c#_db\\shoppingsite\\shoppingsite\\shoppingsite\\views\\products\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{BEABF497-B132-4D9E-AF9A-621FF8921FBE}|ShoppingSite\\ShoppingSite.csproj|C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\shoppingsite\\views\\products\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{BEABF497-B132-4D9E-AF9A-621FF8921FBE}|ShoppingSite\\ShoppingSite.csproj|solutionrelative:shoppingsite\\views\\products\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
@@ -21,9 +24,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{BEABF497-B132-4D9E-AF9A-621FF8921FBE}|ShoppingSite\\ShoppingSite.csproj|C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\shoppingsite\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{BEABF497-B132-4D9E-AF9A-621FF8921FBE}|ShoppingSite\\ShoppingSite.csproj|solutionrelative:shoppingsite\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_ShoppingSiteDB/True/SqlTable/dbo.Products.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BEABF497-B132-4D9E-AF9A-621FF8921FBE}|ShoppingSite\\ShoppingSite.csproj|C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\shoppingsite\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -209,7 +209,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -225,11 +225,11 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+              "Name": "ST:0:0:{fbcae063-e2c0-4ab1-a516-996ea3dafb72}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "_Layout.cshtml.css",
               "DocumentMoniker": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\Views\\Shared\\_Layout.cshtml.css",
               "RelativeDocumentMoniker": "ShoppingSite\\Views\\Shared\\_Layout.cshtml.css",
@@ -242,7 +242,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\Views\\Products\\Details.cshtml",
               "RelativeDocumentMoniker": "ShoppingSite\\Views\\Products\\Details.cshtml",
@@ -250,12 +250,11 @@
               "RelativeToolTip": "ShoppingSite\\Views\\Products\\Details.cshtml",
               "ViewState": "AQIAAKEAAAAAAAAAAIA0wEoAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-20T08:31:05.691Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-20T08:31:05.691Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "ShoppingSite\\Views\\Shared\\_Layout.cshtml",
@@ -263,12 +262,11 @@
               "RelativeToolTip": "ShoppingSite\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AQIAABIAAAAAAAAAAAAAACEAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-19T01:13:28.705Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-19T01:13:28.705Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "_LoginPartial.cshtml",
               "DocumentMoniker": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\Views\\Shared\\_LoginPartial.cshtml",
               "RelativeDocumentMoniker": "ShoppingSite\\Views\\Shared\\_LoginPartial.cshtml",
@@ -304,12 +302,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "dbo.Products [\u30C7\u30FC\u30BF]",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/aspnet_ShoppingSiteDB/True/SqlTable/dbo.Products.sql",
               "ToolTip": "dbo.Products [\u30C7\u30FC\u30BF]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-06-20T01:35:38.312Z"
+              "WhenOpened": "2024-06-20T01:35:38.312Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -817,7 +816,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "ShoppingSite\\Views\\Home\\Index.cshtml",
@@ -825,8 +824,7 @@
               "RelativeToolTip": "ShoppingSite\\Views\\Home\\Index.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-18T03:43:57.788Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-18T03:43:57.788Z"
             }
           ]
         }

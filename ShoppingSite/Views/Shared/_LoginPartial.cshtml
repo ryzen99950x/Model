@@ -1,4 +1,5 @@
 ﻿@using Microsoft.AspNetCore.Identity
+@using ShoppingSite.Models;
 @inject SignInManager<User> SignInManager
 @inject UserManager<User> UserManager
 <style>
@@ -21,7 +22,7 @@
 @if (SignInManager.IsSignedIn(User))
 {
         <li class="nav-item d-flex align-items-center flex-column">
-            <form class="form-inline flex-grow-1" asp-area="Identity" asp-page="/View/Home/index">
+            <form class="form-inline flex-grow-1" asp-area="Identity" asp-page="/Account/Register">
                 <button type="submit" class="nav-link btn btn-link text-dark">@User.Identity?.Name 様</button>
             </form>
             <div class="ml-auto">
@@ -32,13 +33,17 @@
             <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage"></a>
         </li>
     <li class="nav-item">
-        <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-            <button  type="submit" class="nav-link btn btn-link text-dark">Logout</button>
-        </form>
+        <a  class="form-inline text-black" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+            Logout
+        </a>
             <a class="nav-link accounting" asp-area="Identity" asp-page="/Account/Logout">
                 <img class="img-fluid img-100" src="~/img/logout.svg" alt="lgout">
             </a>
     </li>
+        <a class="navbar-brand" href="~/Users/Edit/@UserManager.GetUserId(User)">
+            aaaaaaaaaaa
+
+        </a>
 }
 else
 {

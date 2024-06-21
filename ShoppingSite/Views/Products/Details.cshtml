@@ -8,7 +8,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewData["Title"]</title>
     <style>
         body {
             margin-top: 400px;
@@ -31,7 +30,7 @@
 
         .product-image {
             width: 100%;
-            max-height: 400px; /* 商品画像の最大高さ */
+            max-height: 1000px; /* 商品画像の最大高さ */
             object-fit: cover; /* 画像の比率を維持して親要素にフィット */
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -126,8 +125,6 @@
 </head>
 <body>
     <div class="detail-container">
-        <h1>商品詳細</h1>
-
         <div class="row">
             <div class="col-md-12 text-center mb-4">
                 <img src="~/@Html.DisplayFor(model => model.Image)" alt="Product Image" class="product-image">
