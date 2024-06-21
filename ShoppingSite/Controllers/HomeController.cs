@@ -40,32 +40,28 @@ namespace ShoppingSite.Controllers
         public async Task<IActionResult> Index(ProductSearchViewModel searchModel)
         {
             IQueryable<Products> products = _context.Products;
-            var num = searchModel.GenderId;
-            if (num!= 0) {
-                TempData["SearchModel"] = searchModel.GenderId + 1000000000;
-                    products = products.Where(p => p.GenderId == searchModel.GenderId || p.GenderId == 3);
-
+            IQueryable<Categories> categories = _context.Categories;
+            if (searchModel.GenderName == "Mens" || searchModel.GenderName == "Womens") {
                 searchModel.Results = await products.ToListAsync();
-
-                foreach (var product in searchModel.Results)
-                {
-                    product.Category = await _context.Categories.FindAsync(product.CategoryId);
-                }
+                TempData["SearchModel"] = searchModel.GenderName;
                 return RedirectToAction("Index", "Products");
             }
-            TempData["SearchModel"] = searchModel.Name;
-            if (!string.IsNullOrEmpty(searchModel.Name))
+            else if (searchModel.CategoryName != null)
             {
-                products = products.Where(p => p.Name.Contains(searchModel.Name));
+                categories = categories.Where(c => c.CategoryName.Contains(searchModel.CategoryName));
+
+                searchModel.Results = await products.ToListAsync();
+                TempData["SearchModel"] = searchModel.CategoryName;
+                return RedirectToAction("Index", "Products");
+
             }
-
-            searchModel.Results = await products.ToListAsync();
-
-            foreach (var product in searchModel.Results)
+            else
             {
-                product.Category = await _context.Categories.FindAsync(product.CategoryId);
+                TempData["SearchModel"] = searchModel.Name;
+                searchModel.Results = await products.ToListAsync();
+                return RedirectToAction("Index", "Products");
             }
-            return RedirectToAction("Index", "Products");
+            
         }
 
         public IActionResult Privacy()

@@ -12,6 +12,8 @@ public class ProductSearchViewModel
     public float Weight { get; set; }       // 重量
     public string? Material { get; set; }    // 素材
     public int GenderId { get; set; }
+    public string? GenderName { get; set; }
+    public string CategoryName { get; set; }
     public int Stock { get; set; }          // 在庫数
     public int Limited { get; set; }        // オンライン限定
     public string? Package { get; set; }     // パッケージ

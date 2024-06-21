@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets\\img\\bag.jpg"
     },
     {
+      "Id": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\wwwroot\\img\\cart.svg",
+      "PackagePath": "staticwebassets\\img\\cart.svg"
+    },
+    {
       "Id": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\wwwroot\\img\\home.svg",
       "PackagePath": "staticwebassets\\img\\home.svg"
     },

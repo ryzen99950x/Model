@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/dhqaydTYoj+Z7Ikop6v+Cz8hDOKcCEvkxYR79wtnQA=",
+  "Hash": "NvmdYRfQ6jvOYziQk2IigZyVXq6ucRoQH3WAzJedSmc=",
   "Source": "ShoppingSite",
   "BasePath": "_content/ShoppingSite",
   "Mode": "Default",
@@ -1288,6 +1288,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\bag.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\wwwroot\\img\\cart.svg",
+      "SourceId": "ShoppingSite",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\wwwroot\\",
+      "BasePath": "_content/ShoppingSite",
+      "RelativePath": "img/cart.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\cart.svg"
     },
     {
       "Identity": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\wwwroot\\img\\home.svg",

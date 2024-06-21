@@ -24,18 +24,30 @@ namespace ShoppingSite.Controllers
         public async Task<IActionResult> Index(ProductSearchViewModel searchModel)
         {
             IQueryable<Products> products = _context.Products.Include(p => p.Category);
+            IQueryable<Categories> categories = _context.Categories;
+            var searchResult = TempData["SearchModel"] as string;
 
-            if (TempData["SearchModel"] is int resultNum)
+            if (searchResult == "Mens" || searchResult == "Womens")
             {
-                if (resultNum == 1000000001 || resultNum == 1000000002 || resultNum == 1000000003)
+                if (searchResult == "Mens")
                 {
-                    resultNum -= 1000000000; // Adjusting the resultNum as per your logic
-                    products = products.Where(p => p.GenderId == resultNum || p.GenderId == 3);
+                    searchModel.GenderId = 1;
                 }
+                else
+                {
+                    searchModel.GenderId = 2;
+                }
+                    products = products.Where(p => p.GenderId == searchModel.GenderId || p.GenderId == 3);
             }
-            else if (TempData["SearchModel"] is string resultName && !string.IsNullOrEmpty(resultName))
+            else if (categories.Any(c => c.CategoryName.Contains(searchResult)))
             {
-                products = products.Where(p => p.Name.Contains(resultName));
+                categories = categories.Where(c => c.CategoryName.Contains(searchResult));
+                var categoryIds = await categories.Select(c => c.Id).ToListAsync();
+                products = products.Where(p => categoryIds.Contains(p.CategoryId));
+            }
+            else if (!string.IsNullOrEmpty(searchResult))
+            {
+                products = products.Where(p => p.Name.Contains(searchResult));
             }
 
             var searchResults = await products.ToListAsync();
