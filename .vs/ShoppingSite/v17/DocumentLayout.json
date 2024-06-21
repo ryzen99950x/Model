@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BEABF497-B132-4D9E-AF9A-621FF8921FBE}|ShoppingSite\\ShoppingSite.csproj|C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\shoppingsite\\views\\products\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{BEABF497-B132-4D9E-AF9A-621FF8921FBE}|ShoppingSite\\ShoppingSite.csproj|c:\\users\\marui-1222\\source\\c#_db\\shoppingsite\\shoppingsite\\shoppingsite\\views\\products\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{BEABF497-B132-4D9E-AF9A-621FF8921FBE}|ShoppingSite\\ShoppingSite.csproj|solutionrelative:shoppingsite\\views\\products\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BEABF497-B132-4D9E-AF9A-621FF8921FBE}|ShoppingSite\\ShoppingSite.csproj|c:\\users\\marui-1222\\source\\c#_db\\shoppingsite\\shoppingsite\\shoppingsite\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{BEABF497-B132-4D9E-AF9A-621FF8921FBE}|ShoppingSite\\ShoppingSite.csproj|C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\shoppingsite\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{BEABF497-B132-4D9E-AF9A-621FF8921FBE}|ShoppingSite\\ShoppingSite.csproj|solutionrelative:shoppingsite\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
@@ -225,8 +225,7 @@
               "RelativeToolTip": "ShoppingSite\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AQIAAAwAAAAAAAAAAAAAAB0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-19T01:13:28.705Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-19T01:13:28.705Z"
             },
             {
               "$type": "Document",
@@ -238,8 +237,7 @@
               "RelativeToolTip": "ShoppingSite\\Views\\Shared\\_LoginPartial.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-18T04:05:03.063Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-18T04:05:03.063Z"
             },
             {
               "$type": "Document",
