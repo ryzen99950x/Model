@@ -182,6 +182,30 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Carts/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Carts/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Carts/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Carts/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Carts/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Carts/OrderFix.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcT3JkZXJGaXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Categories/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -232,10 +256,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Products/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Products/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/marui-1222/source/C\#_DB/ShoppingSite/ShoppingSite/ShoppingSite/Views/Products/Details.cshtml]

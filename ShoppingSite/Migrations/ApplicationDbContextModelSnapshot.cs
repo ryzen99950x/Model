@@ -191,6 +191,14 @@ namespace ShoppingSite.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int?>("CartsId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DupCount")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(1);
+
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
 
@@ -198,6 +206,8 @@ namespace ShoppingSite.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CartsId");
 
                     b.HasIndex("ProductId");
 
@@ -230,7 +240,10 @@ namespace ShoppingSite.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CardNum")
+                    b.Property<int>("CardNum1")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CardNum2")
                         .HasColumnType("int");
 
                     b.Property<int>("SecurityCode")
@@ -339,7 +352,7 @@ namespace ShoppingSite.Migrations
                     b.Property<int>("Price")
                         .HasColumnType("int");
 
-                    b.Property<int>("ReviewId")
+                    b.Property<int?>("ReviewId")
                         .HasColumnType("int");
 
                     b.Property<int>("Sales")
@@ -360,9 +373,6 @@ namespace ShoppingSite.Migrations
 
                     b.HasIndex("GenderId");
 
-                    b.HasIndex("ReviewId")
-                        .IsUnique();
-
                     b.ToTable("Products");
                 });
 
@@ -377,6 +387,9 @@ namespace ShoppingSite.Migrations
                     b.Property<string>("Comment")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("ProductId")
+                        .HasColumnType("int");
+
                     b.Property<int>("PruductId")
                         .HasColumnType("int");
 
@@ -387,6 +400,8 @@ namespace ShoppingSite.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
 
                     b.HasIndex("UserId");
 
@@ -407,11 +422,18 @@ namespace ShoppingSite.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("BankId")
+                        .HasColumnType("int");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("CreditId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
@@ -448,6 +470,7 @@ namespace ShoppingSite.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("UserName")
+                        .IsRequired()
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
@@ -528,6 +551,10 @@ namespace ShoppingSite.Migrations
 
             modelBuilder.Entity("ShoppingSite.Models.Carts", b =>
                 {
+                    b.HasOne("ShoppingSite.Models.Carts", null)
+                        .WithMany("OrderItems")
+                        .HasForeignKey("CartsId");
+
                     b.HasOne("ShoppingSite.Models.Products", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
@@ -589,33 +616,36 @@ namespace ShoppingSite.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ShoppingSite.Models.Reviews", "Review")
-                        .WithOne("Product")
-                        .HasForeignKey("ShoppingSite.Models.Products", "ReviewId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Category");
 
                     b.Navigation("Gender");
-
-                    b.Navigation("Review");
                 });
 
             modelBuilder.Entity("ShoppingSite.Models.Reviews", b =>
                 {
+                    b.HasOne("ShoppingSite.Models.Products", "Product")
+                        .WithMany("Review")
+                        .HasForeignKey("ProductId");
+
                     b.HasOne("ShoppingSite.Models.User", "User")
                         .WithMany("Reviews")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.Navigation("Product");
+
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("ShoppingSite.Models.Reviews", b =>
+            modelBuilder.Entity("ShoppingSite.Models.Carts", b =>
                 {
-                    b.Navigation("Product");
+                    b.Navigation("OrderItems");
+                });
+
+            modelBuilder.Entity("ShoppingSite.Models.Products", b =>
+                {
+                    b.Navigation("Review");
                 });
 
             modelBuilder.Entity("ShoppingSite.Models.User", b =>

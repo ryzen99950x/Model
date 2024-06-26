@@ -81,17 +81,18 @@ namespace ShoppingSite.Controllers
                 return NotFound();
             }
 
-            var products = await _context.Products
+            var product = await _context.Products
                 .Include(p => p.Category)
                 .Include(p => p.Gender)
                 .Include(p => p.Review)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (products == null)
+
+            if (product == null)
             {
                 return NotFound();
             }
 
-            return View(products);
+            return View(product);
         }
 
         // GET: Products/Create
@@ -218,6 +219,31 @@ namespace ShoppingSite.Controllers
         private bool ProductsExists(int id)
         {
             return _context.Products.Any(e => e.Id == id);
+        }
+
+        // POST: Products/AddCart/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AddCart(int id, [Bind("Id,Description,Size,Image,Name,Price,Weight,Material,GenderId,Stock,Limited,Package,CategoryId,ReviewId,Sales")] Products products,int userId)
+        {
+            if (id != products.Id)
+            {
+
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                TempData["AddCartProductId"] = products.Id;
+                TempData["AddCartUserId"] = userId;
+                return RedirectToAction("Index", "Carts");
+            }
+            else
+            {
+                return Redirect("~/Identity/Account/Login");
+            }
         }
     }
 }

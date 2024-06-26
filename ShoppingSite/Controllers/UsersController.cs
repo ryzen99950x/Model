@@ -22,7 +22,7 @@ namespace ShoppingSite.Controllers
         // GET: Users
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Users.ToListAsync());
+            return View();
         }
 
         // GET: Users/Details/5
@@ -88,6 +88,8 @@ namespace ShoppingSite.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Address,Id,UserName,NormalizedUserName,Email,NormalizedEmail,EmailConfirmed,PasswordHash,SecurityStamp,ConcurrencyStamp,PhoneNumber,PhoneNumberConfirmed,TwoFactorEnabled,LockoutEnd,LockoutEnabled,AccessFailedCount")] User user)
         {
+            user.NormalizedUserName = user.UserName.ToUpper();
+            user.NormalizedUserName = user.Email.ToUpper();
             if (id != user.Id)
             {
                 return NotFound();

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "NvmdYRfQ6jvOYziQk2IigZyVXq6ucRoQH3WAzJedSmc=",
+  "Hash": "TxY7zvUtP+XRJImkPNobGfTM0W5e/W35j8fuUQJtEgk=",
   "Source": "ShoppingSite",
   "BasePath": "_content/ShoppingSite",
   "Mode": "Default",
@@ -1594,6 +1594,25 @@
       "OriginalItemSpec": "wwwroot\\img\\item-9.png"
     },
     {
+      "Identity": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\wwwroot\\img\\JCB_logo.svg",
+      "SourceId": "ShoppingSite",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\wwwroot\\",
+      "BasePath": "_content/ShoppingSite",
+      "RelativePath": "img/JCB_logo.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\JCB_logo.svg"
+    },
+    {
       "Identity": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\wwwroot\\img\\jewelry.jpg",
       "SourceId": "ShoppingSite",
       "SourceType": "Discovered",
@@ -1687,6 +1706,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\logout.svg"
+    },
+    {
+      "Identity": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\wwwroot\\img\\Mastercard_logo.svg",
+      "SourceId": "ShoppingSite",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\wwwroot\\",
+      "BasePath": "_content/ShoppingSite",
+      "RelativePath": "img/Mastercard_logo.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Mastercard_logo.svg"
     },
     {
       "Identity": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\wwwroot\\img\\mens.jpg",
@@ -1820,6 +1858,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\spec-2.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\wwwroot\\img\\Visa_logo.svg",
+      "SourceId": "ShoppingSite",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\wwwroot\\",
+      "BasePath": "_content/ShoppingSite",
+      "RelativePath": "img/Visa_logo.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Visa_logo.svg"
     },
     {
       "Identity": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\wwwroot\\img\\wallet.jpg",

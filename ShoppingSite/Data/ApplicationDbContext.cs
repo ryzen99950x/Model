@@ -33,5 +33,13 @@ public class ApplicationDbContext : IdentityDbContext<User, IdentityRole<int>, i
             .WithMany(u => u.Favorites)
             .HasForeignKey(c => c.UserId)
             .OnDelete(DeleteBehavior.NoAction);
+        modelBuilder.Entity<Carts>()
+            .Property(c => c.DupCount)
+            .HasDefaultValue(1);
+        modelBuilder.Entity<User>(entity =>
+        {
+            entity.Property(u => u.UserName).IsRequired();
+            entity.Property(u => u.Email).IsRequired();
+        });
     }
 }

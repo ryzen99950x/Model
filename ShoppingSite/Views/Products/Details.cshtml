@@ -1,4 +1,8 @@
-﻿@model ShoppingSite.Models.Products
+﻿@using Microsoft.AspNetCore.Identity
+@using ShoppingSite.Models;
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+@model ShoppingSite.Models.Products
 
 @{
     ViewData["Title"] = "Details";
@@ -140,10 +144,18 @@
                             <h3>価格: ￥@Html.DisplayFor(model => model.Price)</h3>
                             <h3>在庫数: 残り @Html.DisplayFor(model => model.Stock)個</h3>
                         </div>
-                        <a class="text-dark ms-5 d-flex align-items-center" href="~/home">
-                            <span class="me-2">カートに追加</span>
-                            <img class="img-fluid img-50 cart-img" src="~/img/cart.svg" alt="cart">
-                        </a>
+                        <form asp-action="AddCart" class="d-flex">
+                            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                            <input type="hidden" asp-for="Id" />
+                            <input type="hidden" name="userId" value="@UserManager.GetUserId(User)" />
+                            <button type="submit" class="text-dark d-flex align-items-center" style="background: none; border: none; cursor: pointer;">
+                                <span class="me-2">カートに追加</span>
+                                <img class="img-fluid img-50 cart-img" src="~/img/cart.svg" alt="cart">
+                            </button>
+                        </form>
+
+
+                        
                     </div>
                 </div>
 
@@ -165,14 +177,42 @@
                         <dd id="size" class="col-sm-9">@Html.DisplayFor(model => model.Size)</dd>
                         <dd id="weight" class="col-sm-9">@Html.DisplayFor(model => model.Weight)</dd>
                         <dd id="material" class="col-sm-9">@Html.DisplayFor(model => model.Material)</dd>
-                        <dd id="package" class="col-sm-9">@Html.DisplayFor(model => model.Package)</dd>
-                        <dd id="category" class="col-sm-9">@Html.DisplayFor(model => model.Category.CategoryName)</dd>
-                        <dd id="review" class="col-sm-9">@Html.DisplayFor(model => model.Review.Comment)
-                            <p>評価</p>
-                            <span class="star5_rating" data-rate="@Html.DisplayFor(model => model.Review.Rating)"></span>
+                        <dd id="limited" class="col-sm-9">
+                            @if (Model.Limited == 1)
+                            {
+                                 <p>限定品です</p>
+                            }
+                            else
+                            {
+                                <p>通常商品です</p>
+                            }
                         </dd>
-                        <dd id="rating" class="col-sm-9">@Html.DisplayFor(model => model.Review.Rating)</dd>
-                        <dd id="gender" class="col-sm-9">@Html.DisplayFor(model => model.Gender.GenderName)</dd>
+                        <dd id="package" class="col-sm-9">
+                            @if (Model.Package == "1")
+                            {
+                                <p>紙袋のショッパー</p>
+                            }
+                            else
+                            {
+                                <p>ギフト専用パッケージ</p>
+                            }
+                        </dd>
+                        <dd id="category" class="col-sm-9">@Html.DisplayFor(model => model.Category.CategoryName)</dd>
+                        @if (Model.Review != null && Model.Review.Any())
+                        {
+                            foreach (var review in Model.Review)
+                            {
+                                <dd class="col-sm-9" id="review">
+                                    @Html.DisplayFor(model => review.Comment)
+                                    <p>評価</p>
+                                    <span class="star5_rating" data-rate="@review.Rating"></span>
+                                </dd>
+                            }
+                        }
+                        else
+                        {
+                            <dd class="col-sm-9">レビューはまだありません。</dd>
+                        }
                     </dl>
                 </div>
             </div>

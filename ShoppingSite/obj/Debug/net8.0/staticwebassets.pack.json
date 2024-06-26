@@ -13,6 +13,18 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\wwwroot\\img\\JCB_logo.svg",
+      "PackagePath": "staticwebassets\\img\\JCB_logo.svg"
+    },
+    {
+      "Id": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\wwwroot\\img\\Mastercard_logo.svg",
+      "PackagePath": "staticwebassets\\img\\Mastercard_logo.svg"
+    },
+    {
+      "Id": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\wwwroot\\img\\Visa_logo.svg",
+      "PackagePath": "staticwebassets\\img\\Visa_logo.svg"
+    },
+    {
       "Id": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\wwwroot\\img\\account.svg",
       "PackagePath": "staticwebassets\\img\\account.svg"
     },

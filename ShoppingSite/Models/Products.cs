@@ -15,12 +15,12 @@
         public int Limited { get; set; }        // オンライン限定
         public string? Package { get; set; }     // パッケージ
         public int CategoryId { get; set; }     // カテゴリーID
-        public int ReviewId { get; set; }       // レビューID
+        public int? ReviewId { get; set; }       // レビューID
         public int Sales { get; set; }          // 売上
 
         // Navigation properties
         public Categories? Category { get; set; }
-        public Reviews? Review { get; set; }
+        public ICollection<Reviews>? Review { get; set; }
         public Gender? Gender { get; set; }
     }
 }

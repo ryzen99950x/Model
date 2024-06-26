@@ -1,0 +1,192 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using ShoppingSite.Models;
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+@model IEnumerable<ShoppingSite.Models.Carts>
+
+@{
+    ViewData["Title"] = "カート内";
+}
+
+<style>
+    body {
+        background-image: url('/img/background.jpg');
+        background-color: rgba(255, 255, 255, 0.85);
+        background-blend-mode: lighten;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-top: 400px;
+    }
+    .container {
+        max-width: 1400px;
+        margin: auto;
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        font-size: 24px;
+    }
+
+    th, td {
+        padding: 15px;
+        text-align: center;
+        border: 1px solid white;
+        font-size: 30px;
+    }
+
+    th {
+        background-color: whitesmoke;
+    }
+
+    tr:nth-child(even) {
+        background-color: white;
+    }
+
+    .empty-cart {
+        text-align: center;
+        margin-top: 20px;
+        padding: 20px; 
+        background-color: whitesmoke;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
+    }
+    .product-image {
+        max-width: 450px; 
+        height: auto;
+    }
+
+    .order-button-container {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* 要素の中心を画面の中心に移動 */
+    }
+    .order-detail-form {
+        background-color:lightgoldenrodyellow; 
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+        position: center;
+    }
+
+    .order-detail-form h2 {
+        text-align: center;
+    }
+
+    .order-detail-form:disabled {
+        background-color:darkgray;
+    }
+</style>
+<body>
+    <div class="container">
+        
+        <div style="margin-top: 250px;"></div>
+        <h1>@UserManager.GetUserName(User)様のカート</h1>
+
+        @if (Model != null && Model.Any())
+        {
+            <div class="order-button-container">
+                <form asp-action="OrderDetail" >
+                    <button type="submit" class="text-dark d-flex align-items-center order-detail-form" onclick="return checkStockAndSubmit()">
+                            <h2>注文確定画面に進む</h2>
+                            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                            <img class="img-fluid img-100 cart-img" src="~/img/cart.svg" alt="cart">
+                    </button>
+                <input type="hidden" name="userId" value="@UserManager.GetUserId(User)" />
+                </form>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>商品名</th>
+                        <th>商品画像</th>
+                        <th>価格</th>
+                        <th>在庫</th>
+                        <th>選択個数</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.Product.Name)</td>
+                            <td><img src="~/@Html.DisplayFor(modelItem => item.Product.Image)" alt="Product Image" class="product-image"></td>
+                            <td>￥@Html.DisplayFor(modelItem => item.Product.Price)</td>
+                            <td>
+                                @if (item.Product.Stock >= 10)
+                                {
+                                    <p>在庫あり</p>
+                                }
+                                else if (item.Product.Stock < 10 && item.Product.Stock > 0)
+                                {
+                                    <p>在庫残りわずか</p>
+                                    <p>在庫数残り：@item.Product.Stock 個</p>
+                                }
+                                else
+                                {
+                                    <p>在庫なし</p>
+                                }
+                            </td>
+                            <td>@Html.DisplayFor(modelItem => item.DupCount)</td>
+                            <td>
+                                <form asp-action="Delete" asp-route-id="@item.Id" method="post">
+                                    <button type="submit" class="btn btn-danger">削除</button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <div class="text-center mt-5">
+                <h3>合計金額: ￥@Model.Sum(item => item.Product.Price * item.DupCount)</h3>
+            </div>
+        }
+        else
+        {
+            <div class="empty-cart">
+                <h3>カートは空です</h3>
+            </div>
+        }
+    </div>
+</body>
+
+<script>
+    function checkStockAndSubmit() {
+        var items = @Json.Serialize(Model);
+        var isStockAvailable = true;
+        console.log(items)
+        console.log(11)
+        for (var i = 0; i < items.length; i++) {
+            var item = items[i];
+            if (item.product && (item.product.stock === 0 || item.dupCount > item.product.stock)) {
+                console.log(11)
+                alert('在庫が足りません: ');
+                isStockAvailable = false;
+                break;
+            }
+        }
+
+        var orderButton = document.querySelector('.order-button-container button');
+        if (isStockAvailable) {
+            orderButton.removeAttribute('disabled');
+        } else {
+            orderButton.setAttribute('disabled', true);
+        }
+
+        return isStockAvailable;
+    }
+</script>

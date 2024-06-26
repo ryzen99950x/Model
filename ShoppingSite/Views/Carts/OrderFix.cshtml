@@ -1,0 +1,174 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using ShoppingSite.Models;
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+@model IEnumerable<ShoppingSite.Models.Carts>
+@{
+    ViewData["Title"] = "Details";
+}
+
+<style>
+    body {
+        background-image: url('/img/background.jpg');
+        background-color: rgba(255, 255, 255, 0.85);
+        background-blend-mode: lighten;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-top: 400px;
+    }
+
+    .product-image {
+        max-width: 100px; /* 画像の最大幅を設定 */
+        height: auto; /* 高さは自動調整 */
+    }
+    .img-cardlogo {
+        max-width: 300px;
+        height: auto;
+    }
+
+    .order-detail-form {
+        background-color: lightgoldenrodyellow;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+        position: center;
+    }
+
+    .order-detail-form h2 {
+        text-align: center;
+    }
+
+    .order-detail-form:disabled {
+        background-color: darkgray;
+    }
+
+    .order-button-container {
+        margin: 10px;
+    }
+</style>
+<body>
+    <h1>Details</h1>
+    <div>
+        <h4>Carts</h4>
+        <hr />
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Image</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Product.Name)</td>
+                        <td><img src="~/@Html.DisplayFor(modelItem => item.Product.Image)" alt="Product Image" class="product-image"></td>
+                        <td>￥@Html.DisplayFor(modelItem => item.Product.Price)</td>
+                        <td>
+                            @if (item.Product.Stock >= 10)
+                            {
+                                <p>在庫あり</p>
+                            }
+                            else if (item.Product.Stock < 10 && item.Product.Stock > 0)
+                            {
+                                <p>在庫残りわずか</p>
+                            }
+                        </td>
+                        <td>@Html.DisplayFor(modelItem => item.DupCount)</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        @if (Model.Any())
+        {
+            <p>ユーザー名: @Html.DisplayFor(modelItem => Model.First().User.UserName)</p>
+            <p>住所: @Html.DisplayFor(modelItem => Model.First().User.Address)</p>
+
+            @if (Model.First().User.Credits.Any())
+            {
+                <p>クレジットカード:</p>
+                <select id="creditCardSelect">
+                    <option value="">クレジットカードを選択してください</option>
+                    @foreach (var card in Model.First().User.Credits)
+                    {
+                        <option value="@card.CardNum2">@card.CardNum2 - @card.CardNum1</option>
+                    }
+                </select>
+
+            }
+
+        }
+        <div class="order-button-container">
+            <form asp-action="Complete">
+                <button id="submitButton" type="submit" class="text-dark d-flex align-items-center order-detail-form" disabled>
+                    <h2>注文確定</h2>
+                    <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                    <img class="img-fluid img-100 cart-img" src="~/img/cart.svg" alt="cart">
+                </button>
+                <input type="hidden" name="userId" value="@UserManager.GetUserId(User)" />
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function checkStockAndSubmit() {
+            var selectedCardNum = document.getElementById('creditCardSelect').value;
+            var firstFourDigits = selectedCardNum.substring(0, 4);
+            if (selectedCardNum !== "" && (firstFourDigits === "1111" || firstFourDigits === "2222" || firstFourDigits === "3333")) {
+                document.getElementById('submitButton').removeAttribute('disabled');
+                return true;
+            } else {
+                document.getElementById('submitButton').setAttribute('disabled', true);
+                return false;
+            }
+        }
+        document.getElementById('creditCardSelect').addEventListener('change', function () {
+            checkStockAndSubmit();
+        });
+        document.getElementById('creditCardSelect').addEventListener('change', function () {
+            var selectedCardNum = this.value;
+            var firstFourDigits = selectedCardNum.substring(0, 4);
+            //一度画像削除
+            var existingImg = document.getElementById('creditCardLogo');
+            if (existingImg) {
+                existingImg.remove();
+            }
+            // 新しい画像要素を作成して挿入
+            if (firstFourDigits === "1111") {
+                var imgElement = document.createElement("img");
+                imgElement.id = "creditCardLogo";
+                imgElement.className = "img-fluid-cardlogo img-cardlogo";
+                imgElement.src = "/img/JCB_logo.svg";
+                imgElement.alt = "JCB Card";
+                document.getElementById('creditCardLogoContainer').appendChild(imgElement);
+            } else if (firstFourDigits === "2222") {
+                var imgElement = document.createElement("img");
+                imgElement.id = "creditCardLogo";
+                imgElement.className = "img-fluid-cardlogo img-cardlogo";
+                imgElement.src = "/img/Visa_logo.svg";
+                imgElement.alt = "Visa Card";
+                document.getElementById('creditCardLogoContainer').appendChild(imgElement);
+            } else if (firstFourDigits === "3333") {
+                var imgElement = document.createElement("img");
+                imgElement.id = "creditCardLogo";
+                imgElement.className = "img-fluid-cardlogo img-cardlogo";
+                imgElement.src = "/img/Mastercard_logo.svg";
+                imgElement.alt = "MasterCard";
+                document.getElementById('creditCardLogoContainer').appendChild(imgElement);
+            }
+            else {
+                checkStockAndSubmit();
+                alert("カード番号が不正です。正しいカードを選択してください。");
+            }
+        });
+    </script>
+
+</body>
+  
