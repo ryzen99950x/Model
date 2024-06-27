@@ -240,11 +240,13 @@ namespace ShoppingSite.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CardNum1")
-                        .HasColumnType("int");
+                    b.Property<string>("CardNum1")
+                        .HasMaxLength(8)
+                        .HasColumnType("nvarchar(8)");
 
-                    b.Property<int>("CardNum2")
-                        .HasColumnType("int");
+                    b.Property<string>("CardNum2")
+                        .HasMaxLength(8)
+                        .HasColumnType("nvarchar(8)");
 
                     b.Property<int>("SecurityCode")
                         .HasColumnType("int");

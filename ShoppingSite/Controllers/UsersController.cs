@@ -73,11 +73,17 @@ namespace ShoppingSite.Controllers
                 return NotFound();
             }
 
-            var user = await _context.Users.FindAsync(id);
+            var user = await _context.Users
+                .Include(u => u.BankAccounts)
+                .Include(u => u.Credits)
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (user == null)
             {
                 return NotFound();
             }
+            var newCreditId = _context.Credits.Max(c => c.Id) + 1;
+            user.Credits.Add(new Credits { Id = newCreditId });
+            //await _context.SaveChangesAsync();
             return View(user);
         }
 
@@ -86,10 +92,10 @@ namespace ShoppingSite.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Address,Id,UserName,NormalizedUserName,Email,NormalizedEmail,EmailConfirmed,PasswordHash,SecurityStamp,ConcurrencyStamp,PhoneNumber,PhoneNumberConfirmed,TwoFactorEnabled,LockoutEnd,LockoutEnabled,AccessFailedCount")] User user)
+        public async Task<IActionResult> Edit(int id, [Bind("Address,Id,UserName,NormalizedUserName,Email,NormalizedEmail,EmailConfirmed," +
+            "PasswordHash,SecurityStamp,ConcurrencyStamp,PhoneNumber,PhoneNumberConfirmed,TwoFactorEnabled,LockoutEnd,LockoutEnabled," +
+            "AccessFailedCount,Credits")] User user)
         {
-            user.NormalizedUserName = user.UserName.ToUpper();
-            user.NormalizedUserName = user.Email.ToUpper();
             if (id != user.Id)
             {
                 return NotFound();
@@ -99,7 +105,52 @@ namespace ShoppingSite.Controllers
             {
                 try
                 {
-                    _context.Update(user);
+                    var commitUser = await _context.Users
+                        .Include(u => u.Credits) 
+                        .FirstOrDefaultAsync(u => u.Id == id);
+
+                    if (commitUser == null)
+                    {
+                        return NotFound();
+                    }
+                    commitUser.UserName = user.UserName;
+                    commitUser.Email = user.Email;
+                    commitUser.Address = user.Address;
+                    commitUser.PhoneNumber = user.PhoneNumber;
+                    commitUser.NormalizedEmail = commitUser.Email.ToUpper();
+                    await _context.SaveChangesAsync();
+                    if (user.Credits != null)
+                    {
+                        foreach (var item in user.Credits)
+                        {
+                            var credit = await _context.Credits.FindAsync(item.Id);
+                            if (credit != null)
+                            {
+                                credit.Id = item.Id;
+                                credit.UserId = user.Id;
+                                credit.CardNum1 = item.CardNum1;
+                                credit.CardNum2 = item.CardNum2;
+                                credit.SecurityCode = item.SecurityCode;
+                                _context.Update(credit);
+                                await _context.SaveChangesAsync();
+                            }
+                            else
+                            {
+                                if (item.CardNum1 == null || item.CardNum2 == null) 
+                                {
+                                    return RedirectToAction(nameof(Index));
+                                }
+                                var creditAdd = new Credits
+                                {
+                                    UserId = user.Id,
+                                    CardNum1 = item.CardNum1,
+                                    CardNum2 = item.CardNum2,
+                                    SecurityCode = item.SecurityCode
+                                };
+                                _context.Add(creditAdd);
+                            }
+                        }
+                    }
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -117,6 +168,7 @@ namespace ShoppingSite.Controllers
             }
             return View(user);
         }
+
 
         // GET: Users/Delete/5
         public async Task<IActionResult> Delete(int? id)

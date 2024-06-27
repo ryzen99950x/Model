@@ -1,4 +1,7 @@
-﻿@model IEnumerable<ShoppingSite.Models.User>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+@model IEnumerable<ShoppingSite.Models.User>
 
 @{
     ViewData["Title"] = "Index";
@@ -14,7 +17,31 @@
         background-size: cover;
     }
 </style>
-<h3>変更が完了しました</h3>
-<a class="navbar-brand" href="~/home">
-   ホームページに戻る
-</a>
+
+@{
+    if (User.Identity?.IsAuthenticated ?? false)
+    {
+        <h3>変更が完了しました</h3>
+        <h5>変更した内容でもう一度ログインしてください</h5>
+        <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
+            <button type="submit" class="nav-link btn btn-link text-dark">
+                <img class="img-fluid img-100" src="~/img/logout.svg" alt="lgout">
+            </button>
+        </form>
+
+    }
+    else
+    {
+        <h5>ログアウトが完了しました</h5>
+        <div class=" float-lg-start">
+            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">
+                Login
+            </a>
+            <a class="nav-link accounting" asp-area="Identity" asp-page="/Account/Login">
+                <img class="img-fluid img-100" src="~/img/login.svg" alt="Login">
+            </a>
+        </div>
+        
+
+    }
+}

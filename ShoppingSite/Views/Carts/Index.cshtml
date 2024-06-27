@@ -24,7 +24,7 @@
         background-color: white;
         padding: 20px;
         border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
     h1 {
@@ -68,10 +68,7 @@
     }
 
     .order-button-container {
-        position: absolute;
-        top: 30%;
-        left: 50%;
-        transform: translate(-50%, -50%); /* 要素の中心を画面の中心に移動 */
+        position:relative;
     }
     .order-detail-form {
         background-color:lightgoldenrodyellow; 
@@ -92,8 +89,6 @@
 </style>
 <body>
     <div class="container">
-        
-        <div style="margin-top: 250px;"></div>
         <h1>@UserManager.GetUserName(User)様のカート</h1>
 
         @if (Model != null && Model.Any())

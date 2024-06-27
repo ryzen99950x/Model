@@ -340,6 +340,7 @@ namespace ShoppingSite.Controllers
             foreach (var cartItem in cartItems)
             {
                 cartItem.Product.Stock -= cartItem.DupCount;
+                cartItem.Product.Sales += cartItem.DupCount;
             }
             _context.Carts.RemoveRange(cartItems);
             await _context.SaveChangesAsync();
