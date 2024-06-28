@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ShoppingSite.Data;
 
@@ -11,9 +12,11 @@ using ShoppingSite.Data;
 namespace ShoppingSite.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240628080557_addcolum15")]
+    partial class addcolum15
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -389,7 +392,10 @@ namespace ShoppingSite.Migrations
                     b.Property<string>("Comment")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ProductId")
+                    b.Property<int?>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PruductId")
                         .HasColumnType("int");
 
                     b.Property<int>("Rating")
@@ -624,9 +630,7 @@ namespace ShoppingSite.Migrations
                 {
                     b.HasOne("ShoppingSite.Models.Products", "Product")
                         .WithMany("Review")
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ProductId");
 
                     b.HasOne("ShoppingSite.Models.User", "User")
                         .WithMany("Reviews")
