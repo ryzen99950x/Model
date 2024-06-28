@@ -19,15 +19,24 @@
     }
 
     .product-image {
-        max-width: 100px; /* 画像の最大幅を設定 */
-        height: auto; /* 高さは自動調整 */
+        max-width: 300px; 
+        height: auto; 
     }
 
     .img-cardlogo {
         max-width: 300px;
         height: auto;
+        margin-top: 5px;
     }
 
+    .order-fix-container {
+        max-width: 1100px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+    }
     .order-detail-form {
         background-color: lightgoldenrodyellow;
         padding: 20px;
@@ -37,31 +46,37 @@
         position: center;
     }
 
-        .order-detail-form h2 {
-            text-align: center;
-        }
+    .order-detail-form h2 {
+        text-align: center;
+    }
 
-        .order-detail-form:disabled {
-            background-color: darkgray;
-        }
+    .order-detail-form:disabled {
+        background-color: darkgray;
+    }
 
     .order-button-container {
         margin: 10px;
     }
+    p{
+        font-size: 30px;
+    }
+    table{
+        font-size:30px
+    }
 </style>
 <body>
-    <h1>Details</h1>
-    <div>
-        <h4>Carts</h4>
+    <h1>注文情報</h1>
+    <div class="order-fix-container">
+        <h4>カート内</h4>
         <hr />
         <table class="table">
             <thead>
                 <tr>
-                    <th>Product Name</th>
-                    <th>Image</th>
-                    <th>Price</th>
-                    <th>Stock</th>
-                    <th>Quantity</th>
+                    <th>商品名</th>
+                    <th>画像</th>
+                    <th>価格</th>
+                    <th>在庫</th>
+                    <th>選択個数</th>
                 </tr>
             </thead>
             <tbody>
@@ -85,101 +100,110 @@
                     </tr>
                 }
             </tbody>
+            <div class="text-center mt-5">
+                <h3>合計金額: ￥@Model.Sum(item => item.Product.Price * item.DupCount)</h3>
+            </div>
         </table>
-
+    </div>
+    <div class="order-fix-container">
+        <h4>配送先情報</h4>
+        <hr />
         @if (Model.Any())
         {
-            <p>ユーザー名: @Html.DisplayFor(modelItem => Model.First().User.UserName)</p>
+            <p>配送先氏名: @Html.DisplayFor(modelItem => Model.First().User.UserName)</p>
             <p>住所: @Html.DisplayFor(modelItem => Model.First().User.Address)</p>
-
+        }
+    </div>
+    <div class="order-fix-container">
+        <h4>お支払い方法</h4>
+        <hr />
+        @if (Model.Any())
+        {
             @if (Model.First().User.Credits.Any())
             {
                 <p>クレジットカード:</p>
-                <select id="creditCardSelect">
+                <select id="creditCardSelect" onchange="checkStockAndSubmit()">
                     <option value="">クレジットカードを選択してください</option>
                     @foreach (var card in Model.First().User.Credits)
                     {
                         <option value="@card.CardNum2">@card.CardNum2 - @card.CardNum1</option>
                     }
-                    
                 </select>
                 <div id="creditCardLogoContainer"></div>
-
             }
             else
             {
-                
                 <p><br />ユーザー情報編集ページからお支払い情報を追加してください</p>
             }
-
         }
-        <div class="order-button-container">
-            <form asp-action="Complete">
-                <button id="submitButton" type="submit" class="text-dark d-flex align-items-center order-detail-form" disabled onclick="completeOrder()">
-                    <h2>注文確定</h2>
-                    <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
-                    <img class="img-fluid img-100 cart-img" src="~/img/cart.svg" alt="cart">
-                </button>
-                <input type="hidden" name="userId" value="@UserManager.GetUserId(User)" />
-            </form>
-        </div>
+    </div>
+
+    <!-- 注文確定ボタン -->
+    <div class="order-button-container">
+        <form asp-action="Complete">
+            <button id="submitButton" type="submit" class="text-dark d-flex align-items-center order-detail-form" disabled>
+                <h2>注文確定</h2>
+                <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                <img class="img-fluid img-100 cart-img" src="~/img/cart.svg" alt="cart">
+            </button>
+            <input type="hidden" name="userId" value="@UserManager.GetUserId(User)" />
+        </form>
     </div>
 
     <script>
         function checkStockAndSubmit() {
             var selectedCardNum = document.getElementById('creditCardSelect').value;
             var firstFourDigits = selectedCardNum.substring(0, 4);
+            var submitButton = document.getElementById('submitButton');
+
             if (selectedCardNum !== "" && (firstFourDigits === "1111" || firstFourDigits === "2222" || firstFourDigits === "3333")) {
-                document.getElementById('submitButton').removeAttribute('disabled');
+                submitButton.removeAttribute('disabled');
+                displayCardLogo(firstFourDigits);
                 return true;
             } else {
-                document.getElementById('submitButton').setAttribute('disabled', true);
+                submitButton.setAttribute('disabled', true);
                 return false;
             }
         }
-        document.getElementById('creditCardSelect').addEventListener('change', function () {
-            checkStockAndSubmit();
-        });
-        document.getElementById('creditCardSelect').addEventListener('change', function () {
-            var selectedCardNum = this.value;
-            var firstFourDigits = selectedCardNum.substring(0, 4);
-            //一度画像削除
+
+        function displayCardLogo(firstFourDigits) {
+            var imgSrc = "";
+            var imgAlt = "";
+
+            switch (firstFourDigits) {
+                case "1111":
+                    imgSrc = "/img/JCB_logo.svg";
+                    imgAlt = "JCB Card";
+                    break;
+                case "2222":
+                    imgSrc = "/img/Visa_logo.svg";
+                    imgAlt = "Visa Card";
+                    break;
+                case "3333":
+                    imgSrc = "/img/Mastercard_logo.svg";
+                    imgAlt = "MasterCard";
+                    break;
+                default:
+                    return;
+            }
+
             var existingImg = document.getElementById('creditCardLogo');
             if (existingImg) {
-                existingImg.remove();
-            }
-            // 新しい画像要素を作成して挿入
-            if (firstFourDigits === "1111") {
+                existingImg.src = imgSrc;
+                existingImg.alt = imgAlt;
+            } else {
                 var imgElement = document.createElement("img");
                 imgElement.id = "creditCardLogo";
                 imgElement.className = "img-fluid-cardlogo img-cardlogo";
-                imgElement.src = "/img/JCB_logo.svg";
-                imgElement.alt = "JCB Card";
-                document.getElementById('creditCardLogoContainer').appendChild(imgElement);
-            } else if (firstFourDigits === "2222") {
-                var imgElement = document.createElement("img");
-                imgElement.id = "creditCardLogo";
-                imgElement.className = "img-fluid-cardlogo img-cardlogo";
-                imgElement.src = "/img/Visa_logo.svg";
-                imgElement.alt = "Visa Card";
-                document.getElementById('creditCardLogoContainer').appendChild(imgElement);
-            } else if (firstFourDigits === "3333") {
-                var imgElement = document.createElement("img");
-                imgElement.id = "creditCardLogo";
-                imgElement.className = "img-fluid-cardlogo img-cardlogo";
-                imgElement.src = "/img/Mastercard_logo.svg";
-                imgElement.alt = "MasterCard";
+                imgElement.src = imgSrc;
+                imgElement.alt = imgAlt;
                 document.getElementById('creditCardLogoContainer').appendChild(imgElement);
             }
-            else {
-                checkStockAndSubmit();
-                alert("カード番号が不正です。正しいカードを選択してください。");
-            }
-        });
+        }
+
         function completeOrder() {
             alert("注文を確定しました!!\nご購入ありがとうございました！！！");
         }
     </script>
-
 </body>
 

@@ -37,7 +37,7 @@ namespace ShoppingSite.Controllers
                 {
                     searchModel.GenderId = 2;
                 }
-                    products = products.Where(p => p.GenderId == searchModel.GenderId || p.GenderId == 3);
+                products = products.Where(p => p.GenderId == searchModel.GenderId || p.GenderId == 3);
             }
             else if (categories.Any(c => c.CategoryName.Contains(searchResult)))
             {
@@ -85,8 +85,8 @@ namespace ShoppingSite.Controllers
                 .Include(p => p.Category)
                 .Include(p => p.Gender)
                 .Include(p => p.Review)
+                 .ThenInclude(r => r.User)
                 .FirstOrDefaultAsync(m => m.Id == id);
-
             if (product == null)
             {
                 return NotFound();
@@ -104,7 +104,7 @@ namespace ShoppingSite.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddCart(int id, [Bind("Id,Description,Size,Image,Name,Price,Weight,Material,GenderId,Stock,Limited,Package,CategoryId,ReviewId,Sales")] Products products,int userId)
+        public async Task<IActionResult> AddCart(int id, [Bind("Id,Description,Size,Image,Name,Price,Weight,Material,GenderId,Stock,Limited,Package,CategoryId,ReviewId,Sales")] Products products, int userId)
         {
             if (id != products.Id)
             {
@@ -122,6 +122,38 @@ namespace ShoppingSite.Controllers
             {
                 return Redirect("~/Identity/Account/Login");
             }
+        }
+        // POST: Products/CreateReview/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateReview(int id,int userId, int rating, string comment)
+        {
+            var product = await _context.Products
+                .Include(p => p.Category)
+                .Include(p => p.Gender)
+                .Include(p => p.Review)
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (id != product.Id)
+            {
+
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                var newReview = new Reviews
+                {
+                    UserId = userId,
+                    Comment = comment,
+                    Rating = rating,
+                    ProductId = id
+                };
+                _context.Add(newReview);
+                await _context.SaveChangesAsync();
+            }
+            return Redirect($"~/Products/Details/{id}");
         }
     }
 }

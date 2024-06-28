@@ -81,6 +81,7 @@
 
         .star5_rating:before, .star5_rating:after {
             content: '★★★★★';
+            padding: 0px;
         }
 
         .star5_rating:after {
@@ -90,7 +91,7 @@
             left: 0;
             overflow: hidden;
             white-space: nowrap;
-            color: #ffcf32; /* イエローカラー 自由に設定化 */
+            color: #ffcf32;
         }
         .star5_rating[data-rate="5"]:after {
             width: 100%;
@@ -107,9 +108,6 @@
         .star5_rating[data-rate="1"]:after {
             width: 20%;
         }
-        .star5_rating[data-rate="0"]:after {
-            width: 0%;
-        }
 
         .cart-img:hover {
             opacity: 0.7;
@@ -124,6 +122,17 @@
             to {
                 transform: rotate(360deg);
             }
+        }
+
+        .select-box{
+            background-color: whitesmoke;
+        }
+        .review-box{
+            border: 1px dashed #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #f5fffa;
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -159,7 +168,7 @@
                     </div>
                 </div>
 
-                <select id="infoSelect" class="form-select mb-3">
+                <select id="infoSelect" class="form-select mb-3 select-box">
                     <option value="description">説明</option>
                     <option value="size">サイズ</option>
                     <option value="weight">重さ</option>
@@ -174,8 +183,8 @@
                 <div id="infoDetails" class="details-list">
                     <dl class="row select-details-list">
                         <dd id="description" class="col-sm-9">@Html.DisplayFor(model => model.Description)</dd>
-                        <dd id="size" class="col-sm-9">@Html.DisplayFor(model => model.Size)</dd>
-                        <dd id="weight" class="col-sm-9">@Html.DisplayFor(model => model.Weight)</dd>
+                        <dd id="size" class="col-sm-9">@Html.DisplayFor(model => model.Size) [cm]</dd>
+                        <dd id="weight" class="col-sm-9">@Html.DisplayFor(model => model.Weight) [g]</dd>
                         <dd id="material" class="col-sm-9">@Html.DisplayFor(model => model.Material)</dd>
                         <dd id="limited" class="col-sm-9">
                             @if (Model.Limited == 1)
@@ -198,21 +207,64 @@
                             }
                         </dd>
                         <dd id="category" class="col-sm-9">@Html.DisplayFor(model => model.Category.CategoryName)</dd>
-                        @if (Model.Review != null && Model.Review.Any())
-                        {
-                            foreach (var review in Model.Review)
+                        <dd id="review" class="col-sm-9">
+                            <form asp-action="CreateReview" >
+                                <div class="form-group">
+                                    <label name="comment" class="control-label">レビュー記入欄</label>
+                                    <textarea id="review-comment" name="comment" class="form-control" placeholder="レビューをご記入ください"></textarea>
+                                    <input type="hidden" asp-for="Id" />
+                                    <input type="hidden" name="userId" value="@UserManager.GetUserId(User)" />
+                                    <label>星の評価を選んでください:</label><br>
+                                    <input type="radio" id="star1" name="rating" value="1">
+                                    <label for="star1">星1 <span class="star5_rating" data-rate="1"></span></label><br>
+                                    <input type="radio" id="star2" name="rating" value="2">
+                                    <label for="star2">星2 <span class="star5_rating" data-rate="2"></span></label><br>
+                                    <input type="radio" id="star3" name="rating" value="3">
+                                    <label for="star3">星3 <span class="star5_rating" data-rate="3"></span></label><br>
+                                    <input type="radio" id="star4" name="rating" value="4">
+                                    <label for="star4">星4 <span class="star5_rating" data-rate="4"></span></label><br>
+                                    <input type="radio" id="star5" name="rating" value="5">
+                                    <label for="star5">星5 <span class="star5_rating" data-rate="5"></span></label><br>
+                                    <button type="submit" class="nav-link btn btn-link text-dark" onclick="return validateReviewForm()">
+                                        <img class="img-fluid img-100" src="~/img/review.svg" alt="lgout">
+                                    </button>
+                                </div>
+                            </form>
+                            <br />
+                            <p>投稿されたレビュー</p>
+                            @if (Model.Review != null && Model.Review.Any())
                             {
-                                <dd class="col-sm-9" id="review">
-                                    @Html.DisplayFor(model => review.Comment)
-                                    <p>評価</p>
-                                    <span class="star5_rating" data-rate="@review.Rating"></span>
-                                </dd>
+                                foreach (var review in Model.Review)
+                                {
+                                    <div class="review-box">
+                                        <p>投稿者</p>
+                                        @Html.DisplayFor(model => review.User.UserName)
+                                        <p>評価</p>
+                                        <span class="star5_rating" data-rate="@review.Rating"></span>
+                                        <br />
+                                        <p>コメント</p>
+                                        @Html.DisplayFor(model => review.Comment)
+                                        <br />
+                                        <br />
+                                    </div>
+                                }
                             }
+                            else
+                            {
+                            <dd class="col-sm-9">レビューはまだありません。</dd>
+                            }
+                            <dd class="col-sm-9">レビューはまだありません。</dd>
+                        </dd>
+                       
+                        @if (Model.Gender.GenderName == "ユニセックス")
+                        {
+                            <dd id="gender" class="col-sm-9">どなたでもご利用いただけます</dd>
                         }
                         else
                         {
-                            <dd class="col-sm-9">レビューはまだありません。</dd>
+                            <dd id="gender" class="col-sm-9">@Html.DisplayFor(model => model.Gender.GenderName)向け商品</dd>
                         }
+                        
                     </dl>
                 </div>
             </div>
@@ -241,6 +293,31 @@
                 });
             });
         });
+        function validateReviewForm() {
+            var comment = document.getElementById('review-comment').value;
+            var ratings = document.querySelectorAll('input[name="rating"]');
+            var rating = 0;
+            for (var i = 0; i < ratings.length; i++) {
+                if (ratings[i].checked) {
+                    rating = ratings[i].value;
+                    break;
+                }
+            }
+            if (comment.length < 10 && rating == 0) {
+                alert('レビューは少なくとも10文字以上で入力してください。\n評価を5段階でつけてください');
+                return false;
+            }
+            else if (comment.length < 10) {
+                alert('レビューは少なくとも10文字以上で入力してください。');
+                return false;
+            }
+            else if (rating == 0) {
+                alert('評価を5段階でつけてください');
+                return false;
+            }
+            return true;
+        }
+
     </script>
 </body>
 </html>

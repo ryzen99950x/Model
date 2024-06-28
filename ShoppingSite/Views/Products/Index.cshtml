@@ -32,11 +32,14 @@
         padding: 10px;
     }
 
-        .product-list img {
-            max-width: 500px;
-            max-height: 500px;
-            margin-bottom: 10px;
-        }
+    .product-list img {
+        max-width: 500px;
+        max-height: 500px;
+        margin-bottom: 10px;
+    }
+    p {
+        font-size: 21px;
+    }
 </style>
 
 <div class="product-container">
@@ -50,8 +53,8 @@
                     <img src="~/@item.Image" alt="Product Image" class="img-fluid rounded" />
 
                             <h3>@item.Name</h3>
-                            <p>Price: ￥@item.Price</p>
-                            <p>Category: @item.Category.CategoryName</p>
+                            <p>価格: ￥@item.Price</p>
+                            <p>カテゴリ: @item.Category.CategoryName</p>
                     
                     </a> 
                 </div>

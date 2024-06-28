@@ -389,10 +389,7 @@ namespace ShoppingSite.Migrations
                     b.Property<string>("Comment")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("ProductId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("PruductId")
+                    b.Property<int>("ProductId")
                         .HasColumnType("int");
 
                     b.Property<int>("Rating")
@@ -627,7 +624,9 @@ namespace ShoppingSite.Migrations
                 {
                     b.HasOne("ShoppingSite.Models.Products", "Product")
                         .WithMany("Review")
-                        .HasForeignKey("ProductId");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("ShoppingSite.Models.User", "User")
                         .WithMany("Reviews")

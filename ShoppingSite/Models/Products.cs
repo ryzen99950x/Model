@@ -18,7 +18,6 @@
         public int? ReviewId { get; set; }       // レビューID
         public int Sales { get; set; }          // 売上
 
-        // Navigation properties
         public Categories? Category { get; set; }
         public ICollection<Reviews>? Review { get; set; }
         public Gender? Gender { get; set; }

@@ -25,6 +25,14 @@
       "PackagePath": "staticwebassets\\img\\Visa_logo.svg"
     },
     {
+      "Id": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\wwwroot\\img\\VisualStudioSetup (1).exe",
+      "PackagePath": "staticwebassets\\img\\VisualStudioSetup (1).exe"
+    },
+    {
+      "Id": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\wwwroot\\img\\VisualStudioSetup.exe",
+      "PackagePath": "staticwebassets\\img\\VisualStudioSetup.exe"
+    },
+    {
       "Id": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\wwwroot\\img\\account.svg",
       "PackagePath": "staticwebassets\\img\\account.svg"
     },
@@ -135,6 +143,10 @@
     {
       "Id": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\wwwroot\\img\\register.svg",
       "PackagePath": "staticwebassets\\img\\register.svg"
+    },
+    {
+      "Id": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\wwwroot\\img\\review.svg",
+      "PackagePath": "staticwebassets\\img\\review.svg"
     },
     {
       "Id": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\wwwroot\\img\\select-arrow.png",
