@@ -271,6 +271,8 @@
         </div>
     </div>
     <script>
+
+        // 表示をまずは消す
         document.addEventListener("DOMContentLoaded", function () {
             var selectBox = document.getElementById("infoSelect");
             var detailsDiv = document.getElementById("infoDetails");
@@ -281,10 +283,12 @@
 
             // 初期表示でDescriptionを表示
             document.getElementById("description").style.display = "block";
+            // セレクトボックスの変更イベントのリスナー登録
             selectBox.addEventListener("change", function () {
                 var selectedOption = this.value;
                 // 配列でないオブジェクトのforeach
                 Array.prototype.forEach.call(allDetails, function (detail) {
+                    // 詳細情報を切り替える
                     if (detail.id === selectedOption) {
                         detail.style.display = "block";
                     } else {
@@ -293,6 +297,7 @@
                 });
             });
         });
+        // レビューの入力
         function validateReviewForm() {
             var comment = document.getElementById('review-comment').value;
             var ratings = document.querySelectorAll('input[name="rating"]');

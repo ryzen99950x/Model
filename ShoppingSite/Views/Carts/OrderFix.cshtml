@@ -110,8 +110,39 @@
         <hr />
         @if (Model.Any())
         {
-            <p>配送先氏名: @Html.DisplayFor(modelItem => Model.First().User.UserName)</p>
-            <p>住所: @Html.DisplayFor(modelItem => Model.First().User.Address)</p>
+            if (Model.First().User.UserName.Contains("@"))
+            {
+                <div id="UserNameEntered" onchange="checkStockAndSubmit()" data-value="UserNameNone">
+                    <p>ユーザー情報編集ページから氏名を追加してください</p>
+                </div>
+               
+            }
+            else
+            {
+                <div id="UserNameEntered" onchange="checkStockAndSubmit()" data-value="UserNameEntered">
+                    <p>
+                        配送先氏名: @Html.DisplayFor(modelItem => Model.First().User.UserName)
+                    </p>
+                </div> 
+                
+            }
+            if (Model.First().User.Address == null || Model.First().User.Address == "")
+            {
+                <div id="AddressEntered" onchange="checkStockAndSubmit()" data-value="AddressNone">
+                    <p>ユーザー情報編集ページから配送先住所を追加してください</p>
+                </div>
+                
+            }
+            else
+            {
+                <div id="AddressEntered" onchange="checkStockAndSubmit()" data-value="AddressEntered">
+                    <p>
+                        住所: @Html.DisplayFor(modelItem => Model.First().User.Address)
+                    </p>
+                </div>
+                
+            }
+
         }
     </div>
     <div class="order-fix-container">
@@ -155,8 +186,10 @@
             var selectedCardNum = document.getElementById('creditCardSelect').value;
             var firstFourDigits = selectedCardNum.substring(0, 4);
             var submitButton = document.getElementById('submitButton');
-
-            if (selectedCardNum !== "" && (firstFourDigits === "1111" || firstFourDigits === "2222" || firstFourDigits === "3333")) {
+            var userNameEntered = document.getElementById('UserNameEntered').getAttribute('data-value')
+            var AddressEntered = document.getElementById('AddressEntered').getAttribute('data-value')
+                // クレジットカード，名前，住所が設定されていないときは購入はボタンを押せないようにする
+            if (selectedCardNum !== "" && (firstFourDigits === "1111" || firstFourDigits === "2222" || firstFourDigits === "3333") && userNameEntered === "UserNameEntered" && AddressEntered === "AddressEntered") {
                 submitButton.removeAttribute('disabled');
                 displayCardLogo(firstFourDigits);
                 return true;

@@ -1,7 +1,28 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BEABF497-B132-4D9E-AF9A-621FF8921FBE}|ShoppingSite\\ShoppingSite.csproj|c:\\users\\marui-1222\\source\\c#_db\\shoppingsite\\shoppingsite\\shoppingsite\\views\\products\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BEABF497-B132-4D9E-AF9A-621FF8921FBE}|ShoppingSite\\ShoppingSite.csproj|solutionrelative:shoppingsite\\views\\products\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEABF497-B132-4D9E-AF9A-621FF8921FBE}|ShoppingSite\\ShoppingSite.csproj|c:\\users\\marui-1222\\source\\c#_db\\shoppingsite\\shoppingsite\\shoppingsite\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BEABF497-B132-4D9E-AF9A-621FF8921FBE}|ShoppingSite\\ShoppingSite.csproj|solutionrelative:shoppingsite\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEABF497-B132-4D9E-AF9A-621FF8921FBE}|ShoppingSite\\ShoppingSite.csproj|c:\\users\\marui-1222\\source\\c#_db\\shoppingsite\\shoppingsite\\shoppingsite\\views\\carts\\orderfix.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BEABF497-B132-4D9E-AF9A-621FF8921FBE}|ShoppingSite\\ShoppingSite.csproj|solutionrelative:shoppingsite\\views\\carts\\orderfix.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEABF497-B132-4D9E-AF9A-621FF8921FBE}|ShoppingSite\\ShoppingSite.csproj|c:\\users\\marui-1222\\source\\c#_db\\shoppingsite\\shoppingsite\\shoppingsite\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BEABF497-B132-4D9E-AF9A-621FF8921FBE}|ShoppingSite\\ShoppingSite.csproj|solutionrelative:shoppingsite\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEABF497-B132-4D9E-AF9A-621FF8921FBE}|ShoppingSite\\ShoppingSite.csproj|c:\\users\\marui-1222\\source\\c#_db\\shoppingsite\\shoppingsite\\shoppingsite\\controllers\\cartscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BEABF497-B132-4D9E-AF9A-621FF8921FBE}|ShoppingSite\\ShoppingSite.csproj|solutionrelative:shoppingsite\\controllers\\cartscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -24,8 +45,69 @@
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\Views\\Products\\Details.cshtml",
+              "RelativeDocumentMoniker": "ShoppingSite\\Views\\Products\\Details.cshtml",
+              "ToolTip": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\Views\\Products\\Details.cshtml",
+              "RelativeToolTip": "ShoppingSite\\Views\\Products\\Details.cshtml",
+              "ViewState": "AQIAAOkAAAAAAAAAAIAywPwAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-01T02:57:53.417Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CartsController.cs",
+              "DocumentMoniker": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\Controllers\\CartsController.cs",
+              "RelativeDocumentMoniker": "ShoppingSite\\Controllers\\CartsController.cs",
+              "ToolTip": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\Controllers\\CartsController.cs",
+              "RelativeToolTip": "ShoppingSite\\Controllers\\CartsController.cs",
+              "ViewState": "AQIAAFwAAAAAAAAAAAAlwIwAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T02:57:16.423Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "ShoppingSite\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "ShoppingSite\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-01T02:56:02.22Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OrderFix.cshtml",
+              "DocumentMoniker": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\Views\\Carts\\OrderFix.cshtml",
+              "RelativeDocumentMoniker": "ShoppingSite\\Views\\Carts\\OrderFix.cshtml",
+              "ToolTip": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\Views\\Carts\\OrderFix.cshtml",
+              "RelativeToolTip": "ShoppingSite\\Views\\Carts\\OrderFix.cshtml",
+              "ViewState": "AQIAAMwAAAAAAAAAAAAuwL4AAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-01T00:59:46.986Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "ShoppingSite\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\marui-1222\\source\\C#_DB\\ShoppingSite\\ShoppingSite\\ShoppingSite\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "ShoppingSite\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAYAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-28T08:40:33.445Z",
+              "EditorCaption": ""
             }
           ]
         }
